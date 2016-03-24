@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="making progress">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/controlP5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/core.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/oscP5.xml" />
+    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="trying to get the menu class to work. no luck yet">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ie/dit/Menu.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ie/dit/Interface.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ie/dit/Ball.java" afterPath="$PROJECT_DIR$/src/ie/dit/Cube.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MuseProject.iml" afterPath="$PROJECT_DIR$/MuseProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Interface.java" afterPath="$PROJECT_DIR$/src/ie/dit/Interface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Main.java" afterPath="$PROJECT_DIR$/src/ie/dit/Main.java" />
     </list>
     <ignored path="MuseProject.iws" />
@@ -29,7 +27,7 @@
     <favorites_list name="MuseProject" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45104602">
+    <splitter split-orientation="horizontal" split-proportion="0.6493724">
       <split-first>
         <leaf>
           <file leaf-file-name="DataStream.java" pinned="false" current-in-tab="false">
@@ -45,10 +43,11 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.042821158">
-                  <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.74307305">
+                  <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#1155#1161#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -58,25 +57,25 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Interface.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/ie/dit/Interface.java">
+          <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.38539043">
-                  <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#243#244#0" expanded="true" />
-                    <element signature="e#273#274#0" expanded="true" />
+                    <element signature="e#201#202#0" expanded="true" />
+                    <element signature="e#228#229#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Ball.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ie/dit/Ball.java">
+          <file leaf-file-name="Cube.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/ie/dit/Cube.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+                <state vertical-scroll-proportion="0.77078086">
+                  <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -120,8 +119,9 @@
         <option value="$PROJECT_DIR$/src/ie/dit/MainTest.groovy" />
         <option value="$PROJECT_DIR$/src/ie/dit/DataObject.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/Gesture.java" />
-        <option value="$PROJECT_DIR$/src/ie/dit/Ball.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/Interface.java" />
+        <option value="$PROJECT_DIR$/src/ie/dit/Ball.java" />
+        <option value="$PROJECT_DIR$/src/ie/dit/Cube.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/Main.java" />
       </list>
     </option>
@@ -174,46 +174,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MuseProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controlP5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controlP5.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MuseProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controlP5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controlP5.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controlP5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -604,7 +564,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458843150588</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="trying to get the menu class to work. no luck yet">
+      <created>1458845284921</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1458845284921</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -684,11 +650,21 @@
     <MESSAGE value="test 2. working pushes" />
     <MESSAGE value="test 2. working pushesss" />
     <MESSAGE value="making progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="making progress" />
+    <MESSAGE value="trying to get the menu class to work. no luck yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to get the menu class to work. no luck yet" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/ie/dit/Cube.java</url>
+          <line>9</line>
+          <properties field="papplet" class="ie.dit.Cube" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -712,14 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Documents/Libraries/controlP5/library/controlP5.jar!/controlP5/ControlP5.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.746356">
@@ -728,24 +696,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/Interface.java">
+    <entry file="jar://$USER_HOME$/Downloads/processing-3.0b6-windows64/processing-3.0b6/core/library/core.jar!/processing/core/PApplet.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38539043">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.33243242">
+          <caret line="733" column="0" selection-start-line="733" selection-start-column="0" selection-end-line="733" selection-end-column="0" />
+          <folding>
+            <element signature="e#18677#18678#0" expanded="true" />
+            <element signature="e#18713#18714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#273#274#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/Cube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77078086">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042821158">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.74307305">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1155#1161#0" expanded="true" />
           </folding>
         </state>
       </provider>

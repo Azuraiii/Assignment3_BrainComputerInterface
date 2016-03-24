@@ -1,9 +1,10 @@
 package ie.dit;
 
-import controlP5.ControlP5;
 import oscP5.OscMessage;
 import oscP5.OscP5;
 import processing.core.PApplet;
+
+import java.util.ArrayList;
 //Connecting to muse headband
 //go to cmd
 //type: muse-io --device Muse --60hz --osc osc.udp://localhost:5000
@@ -17,37 +18,38 @@ import processing.core.PApplet;
  */
 public class Main extends PApplet {
 
-    Interface intf;
-    OscP5 oscP5;
-    DataStream dataStream;
-    ControlP5 cp5;
-    //Ball ball;
+    PApplet papplet;
+//    Menu intf;
+     OscP5 oscP5;
+//    DataStream dataStream;
+//    ControlP5 cp5;
+    Cube cube;
 
-    float delta_raw;
+    public float delta_raw;
     float delta;
     float deltaRGB;
 
-    float theta_raw;
+    public float theta_raw;
     float theta;
     float thetaRGB;
 
-    float alpha_raw;
+    public float alpha_raw;
     float alpha;
     float alphaRGB;
 
-    float beta_raw;
+    public float beta_raw;
     float beta;
     float betaRGB;
 
-    float gamma_raw;
+    public float gamma_raw;
     float gamma;
     float gammaRGB;
 
-    float concentration_raw;
+    public float concentration_raw;
     float concentration;
     float concentrationRGB;
 
-    float mellow_raw;
+    public float mellow_raw;
     float mellow;
     float mellowRGB;
 
@@ -55,15 +57,22 @@ public class Main extends PApplet {
     float acc;
     float accRGB;
 
-    int menu;
+
+    public int menu = 0;
 
     static int recvPort = 5000;
 
+    ArrayList<Cube>cubeObject = new ArrayList<Cube>();
+
     public void setup(){
         oscP5 = new OscP5(this, recvPort);
+
+        cube = new Cube(this,acc_raw);
+        cubeObject.add(cube);
+
+        papplet = new PApplet();
         //dataStream = new DataStream(this);
         //ball = new Ball();
-
     }
 
     public void settings(){
@@ -71,10 +80,14 @@ public class Main extends PApplet {
     }
 
     public void draw(){
-
+        background(0);
+        //System.out.println("acc: "+acc_raw);
         switch(menu){
             case 0:
-                intf.menu();
+                //intf.render();
+                //
+                cube.drawBall();
+
                 break;
 //            case 1:
 //                //gesture here
@@ -92,10 +105,10 @@ public class Main extends PApplet {
     }
     //this method brings in real time data from the Muse headband.
     void oscEvent(OscMessage msg){
+
         if(msg.checkAddrPattern("/muse/acc")==true) {
             acc_raw = msg.get(0).floatValue();
             System.out.println("acc_raw: "+acc_raw);
-
         }
         if(msg.checkAddrPattern("/muse/elements/experimental/concentration")==true) {
             concentration_raw = msg.get(0).floatValue();
