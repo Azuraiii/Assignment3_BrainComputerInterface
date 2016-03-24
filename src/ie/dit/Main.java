@@ -53,7 +53,7 @@ public class Main extends PApplet {
     float mellow;
     float mellowRGB;
 
-    float acc_raw;
+    public float acc_raw;
     float acc;
     float accRGB;
 
@@ -67,7 +67,7 @@ public class Main extends PApplet {
     public void setup(){
         oscP5 = new OscP5(this, recvPort);
 
-        cube = new Cube(this,acc_raw);
+        cube = new Cube(this, acc_raw);
         cubeObject.add(cube);
 
         papplet = new PApplet();
@@ -81,12 +81,12 @@ public class Main extends PApplet {
 
     public void draw(){
         background(0);
-        //System.out.println("acc: "+acc_raw);
+       // System.out.println("acc: "+acc_raw);
         switch(menu){
             case 0:
                 //intf.render();
                 //
-                cube.drawBall();
+                cube.drawBall(acc_raw);
 
                 break;
 //            case 1:
@@ -108,7 +108,7 @@ public class Main extends PApplet {
 
         if(msg.checkAddrPattern("/muse/acc")==true) {
             acc_raw = msg.get(0).floatValue();
-            System.out.println("acc_raw: "+acc_raw);
+            //System.out.println("acc_raw: "+acc_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/experimental/concentration")==true) {
             concentration_raw = msg.get(0).floatValue();

@@ -7,6 +7,7 @@ import processing.core.PApplet;
  */
 public class Cube {
 
+
     PApplet papplet;
     float acc_raw;
 
@@ -14,14 +15,13 @@ public class Cube {
         this.papplet=papplet;
         this.acc_raw = acc_raw;
 
-
     }
 
 
-    void drawBall(){
+    void drawBall(float acc_raw){
         float acc = acc_raw;
         float accRGB = papplet.map(acc, -1000, 1000, 0, 255);
-        //System.out.println("acc: "+acc_raw);
+        System.out.println("acc: "+acc_raw);
 
 //        concentration = concentration_raw*1000;
 //        concentrationRGB = papplet.map(concentration, 0, 1000, 100, 255);
