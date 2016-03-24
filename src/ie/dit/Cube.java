@@ -9,19 +9,19 @@ public class Cube {
 
 
     PApplet papplet;
-    float acc_raw;
+    float alpha_raw;
 
-    public Cube(PApplet papplet, float acc_raw){
+    public Cube(PApplet papplet, float alpha_raw){
         this.papplet=papplet;
-        this.acc_raw = acc_raw;
-
+        this.alpha_raw = alpha_raw;
     }
 
 
-    void drawBall(float acc_raw){
-        float acc = acc_raw;
-        float accRGB = papplet.map(acc, -1000, 1000, 0, 255);
-        System.out.println("acc: "+acc_raw);
+
+    void drawBall(float alpha_raw){
+        float alpha = alpha_raw;
+        float alphaRGB = papplet.map(alpha, -1000, 1000, 0, 255);
+       // System.out.println("acc: "+alpha_raw);
 
 //        concentration = concentration_raw*1000;
 //        concentrationRGB = papplet.map(concentration, 0, 1000, 100, 255);
@@ -41,11 +41,11 @@ public class Cube {
 //        //System.out.println("alphaRGB: "+alphaRGB);
 
         //works
-        papplet.background(accRGB,0,accRGB);
+        papplet.background(alphaRGB,0,alphaRGB);
         papplet.noStroke();
 
         //works
-        papplet.fill(accRGB+100,0,150,188);
-        papplet.ellipse(papplet.width/2,papplet.height - acc+100,acc,acc);
+//        papplet.fill(accRGB+100,0,150,188);
+//        papplet.ellipse(papplet.width/2,papplet.height - acc+100,acc,acc);
     }
 }

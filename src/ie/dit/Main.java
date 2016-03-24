@@ -24,39 +24,17 @@ public class Main extends PApplet {
 //    DataStream dataStream;
 //    ControlP5 cp5;
     Cube cube;
+    Gesture gesture;
 
+    //public variables where data flows
     public float delta_raw;
-    float delta;
-    float deltaRGB;
-
     public float theta_raw;
-    float theta;
-    float thetaRGB;
-
     public float alpha_raw;
-    float alpha;
-    float alphaRGB;
-
     public float beta_raw;
-    float beta;
-    float betaRGB;
-
     public float gamma_raw;
-    float gamma;
-    float gammaRGB;
-
     public float concentration_raw;
-    float concentration;
-    float concentrationRGB;
-
     public float mellow_raw;
-    float mellow;
-    float mellowRGB;
-
     public float acc_raw;
-    float acc;
-    float accRGB;
-
 
     public int menu = 0;
 
@@ -67,10 +45,11 @@ public class Main extends PApplet {
     public void setup(){
         oscP5 = new OscP5(this, recvPort);
 
-        cube = new Cube(this, acc_raw);
+        cube = new Cube(this, alpha_raw);
         cubeObject.add(cube);
 
         papplet = new PApplet();
+
         //dataStream = new DataStream(this);
         //ball = new Ball();
     }
@@ -86,7 +65,8 @@ public class Main extends PApplet {
             case 0:
                 //intf.render();
                 //
-                cube.drawBall(acc_raw);
+                //cube.drawBall(alpha_raw);
+                gesture.face(acc_raw);
 
                 break;
 //            case 1:
@@ -115,6 +95,7 @@ public class Main extends PApplet {
         }
         if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true) {
             alpha_raw = msg.get(0).floatValue();
+            System.out.println("acc: "+alpha_raw);
 
         }
 //        if(msg.checkAddrPattern("/muse/elements/beta_relative")==true) {
