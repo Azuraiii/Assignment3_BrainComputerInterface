@@ -11,7 +11,7 @@ import processing.core.PApplet;
 //to do here:
 //pass headset data into the classes
 //create the menu here
-//
+
 /**
  * Created by azkei on 22/03/2016.
  */
@@ -55,14 +55,12 @@ public class Main extends PApplet {
     float acc;
     float accRGB;
 
-    int menu = 0;
+    int menu;
 
     static int recvPort = 5000;
 
-
     public void setup(){
         oscP5 = new OscP5(this, recvPort);
-        intf = new Interface(this);
         //dataStream = new DataStream(this);
         //ball = new Ball();
 
@@ -73,16 +71,25 @@ public class Main extends PApplet {
     }
 
     public void draw(){
+
         switch(menu){
             case 0:
                 intf.menu();
                 break;
-
+//            case 1:
+//                //gesture here
+//                break;
+//            case 2:
+//                //mind cube here
+//                break;
+//            case 3:
+//                //arduino robot here
+//                break;
+//            case 4:
+//                //close
+//                break;
         }
-
-
     }
-
     //this method brings in real time data from the Muse headband.
     void oscEvent(OscMessage msg){
         if(msg.checkAddrPattern("/muse/acc")==true) {
@@ -115,7 +122,6 @@ public class Main extends PApplet {
             mellow_raw = msg.get(0).floatValue();
         }
     }
-
 
     public static void main(String[] args)
     {
