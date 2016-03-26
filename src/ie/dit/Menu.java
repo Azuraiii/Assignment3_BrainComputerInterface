@@ -11,7 +11,7 @@ public class Menu{
     ControlP5 cp5;
 
     Menu(PApplet p) {
-        papplet = p;
+        this.papplet = p;
     }
 
 

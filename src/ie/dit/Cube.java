@@ -16,8 +16,6 @@ public class Cube {
         this.alpha_raw = alpha_raw;
     }
 
-
-
     void drawBall(float alpha_raw){
         float alpha = alpha_raw;
         float alphaRGB = papplet.map(alpha, -1000, 1000, 0, 255);

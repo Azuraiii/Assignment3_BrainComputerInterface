@@ -19,27 +19,22 @@ public class Gesture {
 
     PApplet papplet;
     String images;
-    PImage[] view = new PImage[15];
+    PImage[] view = new PImage[9];
 
     Gesture(PApplet p)
     {
         this.papplet = p;
 
-        for(int j = 1; j<15;j++){
-            images = j+".png";
-            view[j] = papplet.loadImage("/","png");
+        for(int j = 1; j<view.length;j++){
+            view[j] = papplet.loadImage("/"+j+".png");
             view[j].resize(papplet.width,papplet.height);
         }
     }
 
-
-    void face(float acc_raw){
-
+    //360 degree view face
+    void drawFace(float acc_raw){
+        papplet.background(view[5]);
     }
-
-
-
-
 
 
 }

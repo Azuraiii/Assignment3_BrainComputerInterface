@@ -40,13 +40,13 @@ public class Main extends PApplet {
 
     static int recvPort = 5000;
 
-    ArrayList<Cube>cubeObject = new ArrayList<Cube>();
+    ArrayList<Cube>codeObject = new ArrayList<Cube>();
 
     public void setup(){
         oscP5 = new OscP5(this, recvPort);
-
+        gesture = new Gesture(this);
         cube = new Cube(this, alpha_raw);
-        cubeObject.add(cube);
+        codeObject.add(cube);
 
         papplet = new PApplet();
 
@@ -61,12 +61,14 @@ public class Main extends PApplet {
     public void draw(){
         background(0);
        // System.out.println("acc: "+acc_raw);
+
         switch(menu){
             case 0:
                 //intf.render();
                 //
                 //cube.drawBall(alpha_raw);
-                gesture.face(acc_raw);
+                gesture.drawFace(acc_raw);
+
 
                 break;
 //            case 1:
