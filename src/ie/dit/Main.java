@@ -1,10 +1,9 @@
 package ie.dit;
 
+import controlP5.ControlP5;
 import oscP5.OscMessage;
 import oscP5.OscP5;
 import processing.core.PApplet;
-
-import java.util.ArrayList;
 //Connecting to muse headband
 //go to cmd
 //type: muse-io --device Muse --60hz --osc osc.udp://localhost:5000
@@ -19,10 +18,9 @@ import java.util.ArrayList;
 public class Main extends PApplet {
 
     PApplet papplet;
-//    Menu intf;
-     OscP5 oscP5;
-//    DataStream dataStream;
-//    ControlP5 cp5;
+    Menu intf;
+    OscP5 oscP5;
+    ControlP5 cp5;
     Cube cube;
     Gesture gesture;
 
@@ -36,22 +34,23 @@ public class Main extends PApplet {
     public float mellow_raw;
     public float acc_raw;
 
-    public int menu = 0;
+
+
 
     static int recvPort = 5000;
 
-    ArrayList<Cube>codeObject = new ArrayList<Cube>();
+    //ArrayList<Cube>codeObject = new ArrayList<Cube>();
 
     public void setup(){
         oscP5 = new OscP5(this, recvPort);
         gesture = new Gesture(this);
         cube = new Cube(this, alpha_raw);
-        codeObject.add(cube);
-
+        //codeObject.add(cube);
         papplet = new PApplet();
+        intf = new Menu(this);
+        intf.menu = 0;
 
-        //dataStream = new DataStream(this);
-        //ball = new Ball();
+
     }
 
     public void settings(){
@@ -59,31 +58,30 @@ public class Main extends PApplet {
     }
 
     public void draw(){
-        background(0);
-       // System.out.println("acc: "+acc_raw);
 
-        switch(menu){
+
+        System.out.println(intf.menu);
+        switch(intf.menu) {
             case 0:
-                //intf.render();
-                //
-                //cube.drawBall(alpha_raw);
-                gesture.drawFace(acc_raw);
-
-
+                //menu screen, no passing
+                intf.render(intf);
                 break;
-//            case 1:
-//                //gesture here
-//                break;
-//            case 2:
-//                //mind cube here
-//                break;
-//            case 3:
-//                //arduino robot here
-//                break;
-//            case 4:
-//                //close
-//                break;
+            case 1:
+                //gesture here, pass the accelerometer
+//                gesture.drawFace(acc_raw);
+                background(0);
+                break;
+            case 2:
+                //mind cube here
+                break;
+            case 3:
+                //arduino robot here
+                break;
+            case 4:
+                //close
+                break;
         }
+
     }
     //this method brings in real time data from the Muse headband.
     void oscEvent(OscMessage msg){

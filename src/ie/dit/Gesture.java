@@ -18,13 +18,13 @@ public class Gesture {
     //jaw clench
 
     PApplet papplet;
-    String images;
     PImage[] view = new PImage[9];
 
     Gesture(PApplet p)
     {
         this.papplet = p;
 
+        //loading images into the array
         for(int j = 1; j<view.length;j++){
             view[j] = papplet.loadImage("/"+j+".png");
             view[j].resize(papplet.width,papplet.height);
@@ -33,7 +33,16 @@ public class Gesture {
 
     //360 degree view face
     void drawFace(float acc_raw){
-        papplet.background(view[5]);
+
+        for(int i = 1; i < view.length;) {
+
+            papplet.background(view[i]);
+            if (papplet.keyPressed) {
+                if (papplet.key == ' ') {
+                    i = i + 1;
+                }
+            }
+        }
     }
 
 

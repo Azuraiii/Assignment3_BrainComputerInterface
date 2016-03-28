@@ -1,6 +1,5 @@
 package ie.dit;
 
-import controlP5.ControlP5;
 import processing.core.PApplet;
 
 /**
@@ -8,40 +7,48 @@ import processing.core.PApplet;
  */
 public class Menu{
     PApplet papplet;
-    ControlP5 cp5;
+    public int menu;
 
     Menu(PApplet p) {
         this.papplet = p;
     }
 
-
     //passing processing applet so we can use proccesing methods
-
-    void render() {
+    public void render(Menu intf) {
         //video background perhaps?
-        papplet.textSize(45);
-        papplet.text("Mind Ball",200,200);
-        papplet.text("Mind Cube",200,300);
-        papplet.text("Exit",200,400);
-//        cp5.addButton("Face Gesture")
-//                .setValue(0)
-//                .setPosition(200, 200)
-//                .setSize(200, 19)
-//        ;
-//        cp5.addButton("Mind Cube")
-//                .setValue(0)
-//                .setPosition(200, 300)
-//                .setSize(200, 19)
-//        ;
-//        cp5.addButton("Exit")
-//                .setValue(0)
-//                .setPosition(100, 400)
-//                .setSize(200, 19)
-//        ;
-//
-//        cp5.getController("Face Gesture").setVisible(true);
-//        cp5.getController("Mind Cube").setVisible(true);
-//        cp5.getController("Exit").setVisible(true);
+            //gray rectangle
+            papplet.fill(120,120,120);
+            papplet.rectMode(papplet.CENTER);
+            papplet.rect(280,180,350,90);
+            papplet.rect(280,280,350,90);
+            papplet.rect(280,380,350,90);
+            papplet.rect(280,480,350,90);
+
+            papplet.ellipse(105+350,420,5,5);
+
+            papplet.textSize(45);
+            papplet.fill(255,0,0);
+            papplet.text("Gesture",130,200);
+            papplet.text("Mind Cube", 130, 300);
+            papplet.text("Arduino Robot", 130, 400);
+            papplet.text("Exit",130, 500);
+
+            if(papplet.mousePressed){
+                if(papplet.mouseX >105 && papplet.mouseX <455 && papplet.mouseY >140 && papplet.mouseY <225) {
+                    intf.menu = 1;
+                }
+                if(papplet.mouseX >105 && papplet.mouseX <455 && papplet.mouseY >235 && papplet.mouseY <325) {
+                    intf.menu = 2;
+                }
+                if(papplet.mouseX >105 && papplet.mouseX <455 && papplet.mouseY >335 && papplet.mouseY <425) {
+                    intf.menu = 3;
+                }
+                if(papplet.mouseX >105 && papplet.mouseX <455 && papplet.mouseY >435 && papplet.mouseY <525) {
+                    intf.menu = 4;
+                }
+            }
+
+
     }
 
 
