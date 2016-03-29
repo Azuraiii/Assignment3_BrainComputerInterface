@@ -34,15 +34,15 @@ public class Gesture {
     //360 degree view face
     void drawFace(float acc_raw){
 
-        for(int i = 1; i < view.length;) {
-
-            papplet.background(view[i]);
-            if (papplet.keyPressed) {
-                if (papplet.key == ' ') {
-                    i = i + 1;
-                }
-            }
-        }
+//        for(int i = 1; i < view.length;) {
+//
+//            papplet.background(view[i]);
+//            if (papplet.keyPressed) {
+//                if (papplet.key == ' ') {
+//                    i = i + 1;
+//                }
+//            }
+//        }
     }
 
 

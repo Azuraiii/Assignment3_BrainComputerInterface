@@ -6,57 +6,101 @@ import processing.core.PApplet;
  * Created by azkei on 23/03/2016.
  */
 public class Cube {
+    //this variable is the constant of 2 PI.
     private static final float TWO_PI = (float) 6.28318530718;
     PApplet papplet;
+    //raw waves from headset
     float alpha_raw;
-    float xMag,yMag = 0;
+    float beta_raw;
+    float delta_raw;
+    float concentration_raw;
+
+    float xmag,ymag = 0;
     float newXmag,newYmag = 0;
 
-
-
-    public Cube(PApplet papplet, float alpha_raw){
+    public Cube(PApplet papplet, float alpha_raw, float beta_raw, float delta_raw,float concentration_raw){
         this.papplet=papplet;
         this.alpha_raw = alpha_raw;
-
-        newXmag = papplet.mouseX/papplet.width * TWO_PI;
-        newYmag = papplet.mouseY/papplet.height * TWO_PI;
-
-        float diff = xMag-newXmag;
-        if (papplet.abs(diff) >  0.01) {
-            xMag -= diff/4.0;
-        }
-
-        diff = yMag-newYmag;
-        if (papplet.abs(diff) >  0.01) {
-            yMag -= diff/4.0;
-        }
+        this.beta_raw =  beta_raw;
+        this.delta_raw = delta_raw;
+        this.concentration_raw = concentration_raw;
     }
 
-    void drawCube(float alpha_raw){
-        papplet.background(0);
-        papplet.lights();
+    void drawCube(float alpha_raw,float beta_raw,float delta_raw, float concentration_raw){
 
+        //mapping out raw waves
+        float alpha = alpha_raw;
+        float alphaRGB = papplet.map(alpha, -1000, 1000, 0, 255);
+        //System.out.println("alpha_raw: "+alpha_raw);
+
+        float beta = beta_raw;
+        float betaRGB = papplet.map(beta, -1000, 1000, 0, 255);
+        //System.out.println("beta_raw: "+alpha_raw);
+
+        float delta = delta_raw;
+        float deltaRGB = papplet.map(delta, -1000, 1000, 0, 255);
+        //System.out.println("delta_raw: "+delta_raw);
+
+        float concentration = concentration_raw*1000;
+        float concentrationRGB = papplet.map(concentration, 0, 1000, 100, 255);
+        //System.out.println("concentrationRGB: "+concentrationRGB);
+
+        papplet.colorMode(papplet.RGB,1);
+        papplet.background(30);
 
         papplet.pushMatrix();
-        //put concentration here
-        papplet.translate((papplet.width/2),(papplet.height/2)-100,-30);
-        //put concentration here
-        papplet.rotateX(-xMag);
-        papplet.rotateY(-yMag);
-        papplet.directionalLight(0,0,255,0,-1,0);
-        papplet.box(200);
-        papplet.popMatrix();
-//        float alpha = alpha_raw;
-//        float alphaRGB = papplet.map(alpha, -1000, 1000, 0, 255);
-       // System.out.println("acc: "+alpha_raw);
+        papplet.translate(papplet.width/2, papplet.height/2, -30);
+        newXmag = papplet.mouseX/(float)(papplet.width) * TWO_PI;
+        newYmag = papplet.mouseY/(float)(papplet.height) * TWO_PI;
+        float diff = xmag-newXmag;
+        if (papplet.abs(diff) >  0.01) {
+            xmag -= diff/4.0;
+        }
+        diff = ymag-newYmag;
+        if (papplet.abs(diff) >  0.01) {
+            ymag -= diff/4.0;
+        }
+        papplet.rotateX(-ymag);
+        papplet.rotateY(-xmag);
+        papplet.scale(90);
+        papplet.beginShape(papplet.QUADS);
+        papplet.fill(0, betaRGB, deltaRGB); papplet.vertex(-1,  1,  1);
+        papplet.fill(alphaRGB, betaRGB, deltaRGB); papplet.vertex( 1,  1,  1);
+        papplet.fill(alphaRGB, 0, deltaRGB); papplet.vertex( 1, -1,  1);
+        papplet.fill(0, 0, deltaRGB); papplet.vertex(-1, -1,  1);
 
-//        concentration = concentration_raw*1000;
-//        concentrationRGB = papplet.map(concentration, 0, 1000, 100, 255);
-//        //System.out.println("concentrationRGB: "+concentrationRGB);
-//
-//        delta = delta_raw*1000;
-//        deltaRGB = papplet.map(delta,0,1000,0,255);
-//        //System.out.println("deltaRGB: "+deltaRGB);
+        papplet.fill(alphaRGB, betaRGB, deltaRGB); papplet.vertex( 1,  1,  1);
+        papplet.fill(alphaRGB, betaRGB, 0); papplet.vertex( 1,  1, -1);
+        papplet.fill(alphaRGB, 0, 0); papplet.vertex( 1, -1, -1);
+        papplet.fill(alphaRGB, 0, 1); papplet.vertex( 1, -1,  1);
+
+        papplet.fill(alphaRGB, betaRGB, 0); papplet.vertex( 1,  1, -1);
+        papplet.fill(0, betaRGB, 0); papplet.vertex(-1,  1, -1);
+        papplet.fill(0, 0, 0); papplet.vertex(-1, -1, -1);
+        papplet.fill(alphaRGB, 0, 0); papplet.vertex( 1, -1, -1);
+
+        papplet.fill(0, betaRGB, 0); papplet.vertex(-1,  1, -1);
+        papplet.fill(0, betaRGB, deltaRGB); papplet.vertex(-1,  1,  1);
+        papplet.fill(0, 0, deltaRGB); papplet.vertex(-1, -1,  1);
+        papplet.fill(0, 0, 0); papplet.vertex(-1, -1, -1);
+
+        papplet.fill(0, betaRGB, 0); papplet.vertex(-1,  1, -1);
+        papplet.fill(alphaRGB, betaRGB, 0); papplet.vertex( 1,  1, -1);
+        papplet.fill(alphaRGB, betaRGB, deltaRGB); papplet.vertex( 1,  1,  1);
+        papplet.fill(0, betaRGB, deltaRGB); papplet.vertex(-1,  1,  1);
+
+        papplet.fill(0, 0, 0); papplet.vertex(-1, -1, -1);
+        papplet.fill(alphaRGB, 0, 0); papplet.vertex( 1, -1, -1);
+        papplet.fill(alphaRGB, 0, deltaRGB); papplet.vertex( 1, -1,  1);
+        papplet.fill(0, 0, deltaRGB); papplet.vertex(-1, -1,  1);
+        papplet.noStroke();
+        papplet.endShape();
+
+        papplet.popMatrix();
+
+
+
+
 //
 //        mellow=mellow_raw*1000;
 //        mellowRGB=papplet.map(mellow,0,1000,0,255);
@@ -67,12 +111,5 @@ public class Cube {
 //        alphaRGB = papplet.map(alpha,0,1000,0,255);
 //        //System.out.println("alphaRGB: "+alphaRGB);
 
-        //works
-//        papplet.background(alphaRGB,0,alphaRGB);
-//        papplet.noStroke();
-
-        //works
-//        papplet.fill(accRGB+100,0,150,188);
-//        papplet.ellipse(papplet.width/2,papplet.height - acc+100,acc,acc);
     }//end drawCube
-}
+}//end class

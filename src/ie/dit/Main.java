@@ -36,13 +36,10 @@ public class Main extends PApplet {
 
     static int recvPort = 5000;
 
-    //ArrayList<Cube>codeObject = new ArrayList<Cube>();
-
     public void setup(){
         oscP5 = new OscP5(this, recvPort);
         gesture = new Gesture(this);
-        cube = new Cube(this, alpha_raw);
-        //codeObject.add(cube);
+        cube = new Cube(this, alpha_raw,beta_raw,delta_raw,concentration_raw);
         papplet = new PApplet();
 
         //this code helps pass by reference menu var
@@ -50,15 +47,12 @@ public class Main extends PApplet {
         intf.menu = 0;
 
     }
-    float x,y,z = 1;
 
     public void settings(){
         size(600,600,P3D);
     }
 
     public void draw(){
-
-
 
         switch(intf.menu) {
             case 0:
@@ -72,7 +66,7 @@ public class Main extends PApplet {
                 break;
             case 2:
                 //mind cube here
-                cube.drawCube(acc_raw);
+                cube.drawCube(alpha_raw,beta_raw,delta_raw,concentration_raw);
 
                 break;
             case 3:
@@ -101,17 +95,18 @@ public class Main extends PApplet {
         }
         if(msg.checkAddrPattern("/muse/elements/experimental/concentration")==true) {
             concentration_raw = msg.get(0).floatValue();
+            System.out.println("concentration raw: "+concentration_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true) {
             alpha_raw = msg.get(0).floatValue();
-            System.out.println("acc: "+alpha_raw);
+            System.out.println("alpha_Raw: "+alpha_raw);
 
         }
-//        if(msg.checkAddrPattern("/muse/elements/beta_relative")==true) {
-//            beta_raw = msg.get(0).floatValue();
-//            beta = beta_raw*1000;
-//            betaRGB = map(beta,0,1000,0,255);
-//        }
+        if(msg.checkAddrPattern("/muse/elements/beta_relative")==true) {
+            beta_raw = msg.get(0).floatValue();
+            System.out.println("beta_Raw: "+beta_raw);
+        }
+
 //        if(msg.checkAddrPattern("/muse/elements/theta_relative")==true) {
 //            theta_raw = msg.get(0).floatValue();
 //            theta = theta_raw*1000;
@@ -119,6 +114,7 @@ public class Main extends PApplet {
 //        }
         if(msg.checkAddrPattern("/muse/elements/delta_relative")==true) {
             delta_raw = msg.get(0).floatValue();
+            System.out.println("delta_raw: "+delta_raw);
         }
 
         if(msg.checkAddrPattern("muse/elements/experimental/mellow")==true){

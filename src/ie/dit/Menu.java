@@ -15,7 +15,7 @@ public class Menu{
 
     //passing processing applet so we can use proccesing methods
     public void render(Menu intf) {
-        papplet.background(255,0,0);
+        papplet.background(100,100,100);
         //video background perhaps?
             //gray rectangle
             papplet.fill(120,120,120);
