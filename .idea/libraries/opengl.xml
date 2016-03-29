@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="opengl">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Documents/Libraries/libraries/postspectacular-toxiclibs-44d9932dbc9f/lib/jogl/opengl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

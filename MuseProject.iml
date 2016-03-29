@@ -10,5 +10,9 @@
     <orderEntry type="library" name="core" level="project" />
     <orderEntry type="library" name="oscP5" level="project" />
     <orderEntry type="library" name="controlP5" level="project" />
+    <orderEntry type="library" name="opengl" level="project" />
+    <orderEntry type="library" name="jogl-all" level="project" />
+    <orderEntry type="library" name="gluegen-rt" level="project" />
+    <orderEntry type="library" name="core1" level="application" />
   </component>
 </module>

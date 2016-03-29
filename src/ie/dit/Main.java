@@ -34,9 +34,6 @@ public class Main extends PApplet {
     public float mellow_raw;
     public float acc_raw;
 
-
-
-
     static int recvPort = 5000;
 
     //ArrayList<Cube>codeObject = new ArrayList<Cube>();
@@ -47,42 +44,54 @@ public class Main extends PApplet {
         cube = new Cube(this, alpha_raw);
         //codeObject.add(cube);
         papplet = new PApplet();
+
+        //this code helps pass by reference menu var
         intf = new Menu(this);
         intf.menu = 0;
 
-
     }
+    float x,y,z = 1;
 
     public void settings(){
-        size(600,600);
+        size(600,600,P3D);
     }
 
     public void draw(){
 
 
-        System.out.println(intf.menu);
+
         switch(intf.menu) {
             case 0:
-                //menu screen, no passing
+                //menu screen pass by reference
                 intf.render(intf);
                 break;
             case 1:
                 //gesture here, pass the accelerometer
 //                gesture.drawFace(acc_raw);
-                background(0);
+
                 break;
             case 2:
                 //mind cube here
+                cube.drawCube(acc_raw);
+
                 break;
             case 3:
                 //arduino robot here
                 break;
             case 4:
-                //close
+                //exit
+                exit();
                 break;
         }
-
     }
+
+    public void keyPressed(){
+        if( key == ' ')
+        {
+            intf.menu = 0;
+        }
+    }
+
     //this method brings in real time data from the Muse headband.
     void oscEvent(OscMessage msg){
 
