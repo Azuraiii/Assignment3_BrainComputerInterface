@@ -46,6 +46,8 @@ public class Main extends PApplet {
         gw.rawAlpha = alpha_raw;
         gw.rawBeta = beta_raw;
         gw.rawDelta = delta_raw;
+        gw.rawTheta = theta_raw;
+        gw.rawGamma = gamma_raw;
 
         //this code helps pass by reference menu var
         intf = new Menu(this);
