@@ -30,8 +30,8 @@ public class Cube {
 
         //mapping out raw waves
         float alpha = alpha_raw;
-        float alphaRGB = papplet.map(alpha, -1000, 1000, 0, 255);
-        //System.out.println("alpha_raw: "+alpha_raw);
+        float alphaRGB = papplet.map(alpha, 0, (float) 0.5, 0, 255);
+        System.out.println("alphaRGB: "+alphaRGB);
 
         float beta = beta_raw;
         float betaRGB = papplet.map(beta, -1000, 1000, 0, 255);

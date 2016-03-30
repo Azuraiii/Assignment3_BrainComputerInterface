@@ -95,16 +95,16 @@ public class Main extends PApplet {
         }
         if(msg.checkAddrPattern("/muse/elements/experimental/concentration")==true) {
             concentration_raw = msg.get(0).floatValue();
-            System.out.println("concentration raw: "+concentration_raw);
+           // System.out.println("concentration raw: "+concentration_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true) {
             alpha_raw = msg.get(0).floatValue();
-            System.out.println("alpha_Raw: "+alpha_raw);
+            //System.out.println("alpha_Raw: "+alpha_raw);
 
         }
         if(msg.checkAddrPattern("/muse/elements/beta_relative")==true) {
             beta_raw = msg.get(0).floatValue();
-            System.out.println("beta_Raw: "+beta_raw);
+          //  System.out.println("beta_Raw: "+beta_raw);
         }
 
 //        if(msg.checkAddrPattern("/muse/elements/theta_relative")==true) {
@@ -114,7 +114,7 @@ public class Main extends PApplet {
 //        }
         if(msg.checkAddrPattern("/muse/elements/delta_relative")==true) {
             delta_raw = msg.get(0).floatValue();
-            System.out.println("delta_raw: "+delta_raw);
+           // System.out.println("delta_raw: "+delta_raw);
         }
 
         if(msg.checkAddrPattern("muse/elements/experimental/mellow")==true){
