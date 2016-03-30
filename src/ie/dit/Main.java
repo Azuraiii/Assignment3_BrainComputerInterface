@@ -23,6 +23,7 @@ public class Main extends PApplet {
     ControlP5 cp5;
     Cube cube;
     Gesture gesture;
+    graphWindow gw;
 
     //public variables where data flows
     public float delta_raw;
@@ -41,6 +42,7 @@ public class Main extends PApplet {
         gesture = new Gesture(this);
         cube = new Cube(this, alpha_raw,beta_raw,delta_raw,concentration_raw);
         papplet = new PApplet();
+        gw = new graphWindow();
 
         //this code helps pass by reference menu var
         intf = new Menu(this);
@@ -53,6 +55,7 @@ public class Main extends PApplet {
     }
 
     public void draw(){
+
 
         switch(intf.menu) {
             case 0:
@@ -97,14 +100,14 @@ public class Main extends PApplet {
             concentration_raw = msg.get(0).floatValue();
            // System.out.println("concentration raw: "+concentration_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true) {
+        if(msg.checkAddrPattern("/muse/eeg")==true) {
             alpha_raw = msg.get(0).floatValue();
-            //System.out.println("alpha_Raw: "+alpha_raw);
+           // System.out.println("alpha_Raw: "+alpha_raw);
 
         }
         if(msg.checkAddrPattern("/muse/elements/beta_relative")==true) {
             beta_raw = msg.get(0).floatValue();
-          //  System.out.println("beta_Raw: "+beta_raw);
+              System.out.println("beta_Raw: "+beta_raw);
         }
 
 //        if(msg.checkAddrPattern("/muse/elements/theta_relative")==true) {

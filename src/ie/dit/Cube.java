@@ -30,28 +30,30 @@ public class Cube {
 
         //mapping out raw waves
         float alpha = alpha_raw;
-        float alphaRGB = papplet.map(alpha, 0, (float) 0.5, 0, 255);
-        System.out.println("alphaRGB: "+alphaRGB);
+        float alphaRGB = papplet.map(alpha, 500, 1200, 50, 255);
+        //System.out.println("alphaRGB: "+alphaRGB);
 
         float beta = beta_raw;
-        float betaRGB = papplet.map(beta, -1000, 1000, 0, 255);
-        //System.out.println("beta_raw: "+alpha_raw);
+        float betaRGB = papplet.map(beta,0,0, 0, 255);
+        //System.out.println("betaRGB: "+betaRGB);
 
         float delta = delta_raw;
         float deltaRGB = papplet.map(delta, -1000, 1000, 0, 255);
-        //System.out.println("delta_raw: "+delta_raw);
+        //System.out.println("deltaRGB: "+deltaRGB);
 
         float concentration = concentration_raw*1000;
         float concentrationRGB = papplet.map(concentration, 0, 1000, 100, 255);
         //System.out.println("concentrationRGB: "+concentrationRGB);
 
-        papplet.colorMode(papplet.RGB,1);
-        papplet.background(30);
+       // papplet.colorMode(papplet.RGB,1);
+        papplet.background(alphaRGB);
 
+        papplet.fill(alphaRGB,0,0);
         papplet.pushMatrix();
         papplet.translate(papplet.width/2, papplet.height/2, -30);
         newXmag = papplet.mouseX/(float)(papplet.width) * TWO_PI;
         newYmag = papplet.mouseY/(float)(papplet.height) * TWO_PI;
+
         float diff = xmag-newXmag;
         if (papplet.abs(diff) >  0.01) {
             xmag -= diff/4.0;
@@ -60,45 +62,21 @@ public class Cube {
         if (papplet.abs(diff) >  0.01) {
             ymag -= diff/4.0;
         }
+
+        float x = (float) .1;
+
+        //rotations
+//        if (concentrationRGB >= 1){
+//            x += papplet.random((float) 0.1);
+//            papplet.rotateX(x);
+//        }
+
         papplet.rotateX(-ymag);
+
         papplet.rotateY(-xmag);
-        papplet.scale(90);
-        papplet.beginShape(papplet.QUADS);
-        papplet.fill(0, betaRGB, deltaRGB); papplet.vertex(-1,  1,  1);
-        papplet.fill(alphaRGB, betaRGB, deltaRGB); papplet.vertex( 1,  1,  1);
-        papplet.fill(alphaRGB, 0, deltaRGB); papplet.vertex( 1, -1,  1);
-        papplet.fill(0, 0, deltaRGB); papplet.vertex(-1, -1,  1);
-
-        papplet.fill(alphaRGB, betaRGB, deltaRGB); papplet.vertex( 1,  1,  1);
-        papplet.fill(alphaRGB, betaRGB, 0); papplet.vertex( 1,  1, -1);
-        papplet.fill(alphaRGB, 0, 0); papplet.vertex( 1, -1, -1);
-        papplet.fill(alphaRGB, 0, 1); papplet.vertex( 1, -1,  1);
-
-        papplet.fill(alphaRGB, betaRGB, 0); papplet.vertex( 1,  1, -1);
-        papplet.fill(0, betaRGB, 0); papplet.vertex(-1,  1, -1);
-        papplet.fill(0, 0, 0); papplet.vertex(-1, -1, -1);
-        papplet.fill(alphaRGB, 0, 0); papplet.vertex( 1, -1, -1);
-
-        papplet.fill(0, betaRGB, 0); papplet.vertex(-1,  1, -1);
-        papplet.fill(0, betaRGB, deltaRGB); papplet.vertex(-1,  1,  1);
-        papplet.fill(0, 0, deltaRGB); papplet.vertex(-1, -1,  1);
-        papplet.fill(0, 0, 0); papplet.vertex(-1, -1, -1);
-
-        papplet.fill(0, betaRGB, 0); papplet.vertex(-1,  1, -1);
-        papplet.fill(alphaRGB, betaRGB, 0); papplet.vertex( 1,  1, -1);
-        papplet.fill(alphaRGB, betaRGB, deltaRGB); papplet.vertex( 1,  1,  1);
-        papplet.fill(0, betaRGB, deltaRGB); papplet.vertex(-1,  1,  1);
-
-        papplet.fill(0, 0, 0); papplet.vertex(-1, -1, -1);
-        papplet.fill(alphaRGB, 0, 0); papplet.vertex( 1, -1, -1);
-        papplet.fill(alphaRGB, 0, deltaRGB); papplet.vertex( 1, -1,  1);
-        papplet.fill(0, 0, deltaRGB); papplet.vertex(-1, -1,  1);
-        papplet.noStroke();
-        papplet.endShape();
+        papplet.box(betaRGB,deltaRGB,betaRGB);
 
         papplet.popMatrix();
-
-
 
 
 //
