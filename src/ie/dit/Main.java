@@ -42,7 +42,10 @@ public class Main extends PApplet {
         gesture = new Gesture(this);
         cube = new Cube(this, alpha_raw,beta_raw,delta_raw,concentration_raw);
         papplet = new PApplet();
-        gw = new graphWindow();
+        gw = new graphWindow(gw);
+        gw.rawAlpha = alpha_raw;
+        gw.rawBeta = beta_raw;
+        gw.rawDelta = delta_raw;
 
         //this code helps pass by reference menu var
         intf = new Menu(this);
@@ -57,29 +60,30 @@ public class Main extends PApplet {
     public void draw(){
 
 
-        switch(intf.menu) {
-            case 0:
-                //menu screen pass by reference
-                intf.render(intf);
-                break;
-            case 1:
-                //gesture here, pass the accelerometer
+            switch (intf.menu) {
+                case 0:
+                    //menu screen pass by reference
+                    intf.render(intf);
+                    break;
+                case 1:
+                    //gesture here, pass the accelerometer
 //                gesture.drawFace(acc_raw);
 
-                break;
-            case 2:
-                //mind cube here
-                cube.drawCube(alpha_raw,beta_raw,delta_raw,concentration_raw);
+                    break;
+                case 2:
+                    //mind cube here
+                    cube.drawCube(alpha_raw, beta_raw, delta_raw, concentration_raw);
 
-                break;
-            case 3:
-                //arduino robot here
-                break;
-            case 4:
-                //exit
-                exit();
-                break;
-        }
+                    break;
+                case 3:
+                    //arduino robot here
+                    break;
+                case 4:
+                    //exit
+                    exit();
+                    break;
+            }
+
     }
 
     public void keyPressed(){
