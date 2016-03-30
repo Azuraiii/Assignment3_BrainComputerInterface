@@ -29,7 +29,7 @@ public class Menu{
 
             papplet.textSize(45);
             papplet.fill(255,0,0);
-            papplet.text("Gesture",130,200);
+            papplet.text("Test Headset",130,200);
             papplet.text("Mind Cube", 130, 300);
             papplet.text("Arduino Robot", 130, 400);
             papplet.text("Exit",130, 500);
