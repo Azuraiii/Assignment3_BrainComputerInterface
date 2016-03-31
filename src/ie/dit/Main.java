@@ -58,6 +58,7 @@ public class Main extends PApplet {
         testHeadset = new TestHeadset(this,horse1,horse2,horse3,horse4,blink,forehead,jaw_clench);
         cube = new Cube(this, alpha_raw,beta_raw,delta_raw,concentration_raw);
         papplet = new PApplet();
+
         gw = new graphWindow(gw);
         //waves
         gw.rawAlpha = alpha_raw;
