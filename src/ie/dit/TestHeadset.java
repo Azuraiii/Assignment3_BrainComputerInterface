@@ -17,10 +17,11 @@ public class TestHeadset{
     float horse3;
     float horse4;
     float blink;
-    float forehead;
+
+    int forehead;
     float jaw_clench;
 
-    TestHeadset(PApplet p, float horse1, float horse2,float horse3,float horse4, float blink, float forehead,float jaw_clench)
+    TestHeadset(PApplet p, float horse1, float horse2,float horse3,float horse4, float blink, int forehead,float jaw_clench)
     {
         this.papplet = p;
         this.horse1 = horse1;
@@ -32,7 +33,7 @@ public class TestHeadset{
         this.jaw_clench = jaw_clench;
     }
 
-    void render(float horse1, float horse2,float horse3,float horse4, float blink, float forehead,float jaw_clench){
+    void render(float horse1,float horse2,float horse3,float horse4, int forehead,float blink ,float jaw_clench){
         papplet.background(255);
 
         if(jaw_clench > 1 || jaw_clench == 1) {
@@ -56,7 +57,7 @@ public class TestHeadset{
         papplet.rect(300,100,350,40);
 
         //blink
-        if(blink > 1 || blink == 1) {
+        if(blink == 1) {
             papplet.ellipse(200, 240, 100, 50);
             papplet.ellipse(400, 240, 100, 50);
         }
@@ -66,25 +67,21 @@ public class TestHeadset{
             papplet.fill(255, 0, 0);
             papplet.rect(150, 100, 50, 40);
         }
-
         //horse2
         if(horse2 ==1) {
             papplet.fill(0, 255, 0);
             papplet.rect(225, 100, 100, 40);
         }
-
         //forehead
-        if(forehead > 1||forehead ==1) {
+        if(forehead ==1) {
             papplet.fill(0);
             papplet.rect(300, 100, 50, 40);
         }
-
         //horse3
         if(horse3 ==1) {
             papplet.fill(50, 90, 255);
             papplet.rect(375, 100, 100, 40);
         }
-
         //horse4
         if(horse4 ==1) {
             papplet.fill(0, 255, 255);

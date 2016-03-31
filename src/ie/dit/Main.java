@@ -45,7 +45,7 @@ public class Main extends PApplet {
     public float horse3;
     public float horse4;
     //forehead var
-    public float forehead;
+    public int forehead;
     //blink
     public float blink;
     //jaw clench
@@ -170,17 +170,17 @@ public class Main extends PApplet {
             horse2 = msg.get(1).floatValue();
             horse3 = msg.get(2).floatValue();
             horse4 = msg.get(3).floatValue();
-            System.out.println("horse1: "+horse1);
-            System.out.println("horse2: "+horse2);
-            System.out.println("horse3: "+horse3);
-            System.out.println("horse4: "+horse4);
+//            System.out.println("horse1: "+horse1);
+//            System.out.println("horse2: "+horse2);
+//            System.out.println("horse3: "+horse3);
+//            System.out.println("horse4: "+horse4);
 
         }
 
-//        if(msg.checkAddrPattern("/muse/elements/touching_forehead")==true){
-//            forehead = msg.get(0).floatValue();
-//            System.out.println("forehead: "+forehead);
-//        }
+        if(msg.checkAddrPattern("/muse/elements/touching_forehead")==true){
+            forehead = msg.get(0).intValue();
+            System.out.println("forehead: "+forehead);
+        }
 //        if(msg.checkAddrPattern("/muse/elements/blink")==true){
 //            blink = msg.get(0).floatValue();
 //        }
