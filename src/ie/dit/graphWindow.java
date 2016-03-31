@@ -82,7 +82,7 @@ public class graphWindow extends PApplet{
         float concentrationHeight = map(concentration,500,1200,0,height);
         float mellowHeight = map(mellow,500,1200,0,height);
 
-        System.out.println(alphaHeight);
+       // System.out.println(alphaHeight);
         float gap = (float)width/8;
 
         //waves

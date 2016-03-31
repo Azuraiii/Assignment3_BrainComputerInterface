@@ -170,17 +170,23 @@ public class Main extends PApplet {
             horse2 = msg.get(1).floatValue();
             horse3 = msg.get(2).floatValue();
             horse4 = msg.get(3).floatValue();
+            System.out.println("horse1: "+horse1);
+            System.out.println("horse2: "+horse2);
+            System.out.println("horse3: "+horse3);
+            System.out.println("horse4: "+horse4);
+
         }
 
-        if(msg.checkAddrPattern("/muse/elements/touching_forehead")==true){
-            forehead = msg.get(0).floatValue();
-        }
-        if(msg.checkAddrPattern("/muse/elements/blink")==true){
-            blink = msg.get(0).floatValue();
-        }
-        if(msg.checkAddrPattern("/muse/elements/jaw_clench")==true){
-            jaw_clench = msg.get(0).floatValue();
-        }
+//        if(msg.checkAddrPattern("/muse/elements/touching_forehead")==true){
+//            forehead = msg.get(0).floatValue();
+//            System.out.println("forehead: "+forehead);
+//        }
+//        if(msg.checkAddrPattern("/muse/elements/blink")==true){
+//            blink = msg.get(0).floatValue();
+//        }
+//        if(msg.checkAddrPattern("/muse/elements/jaw_clench")==true){
+//            jaw_clench = msg.get(0).floatValue();
+//        }
     }
 
     public static void main(String[] args)

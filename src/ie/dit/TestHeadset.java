@@ -33,34 +33,63 @@ public class TestHeadset{
     }
 
     void render(float horse1, float horse2,float horse3,float horse4, float blink, float forehead,float jaw_clench){
-        papplet.background(120,120,120);
+        papplet.background(255);
 
-        //papplet.ellipse(200,200,200,200);
-        papplet.pushMatrix();
-        papplet.beginShape(papplet.POLYGON);
-        papplet.fill(0);
-        papplet.stroke(255);
-        papplet.strokeWeight(3);
-        int[]xpts ={150,200,300,400,450,350,300,250,150};
-        int[]ypts ={350,450,500,450,350,420,430,420,350};
+        if(jaw_clench > 1 || jaw_clench == 1) {
+            papplet.pushMatrix();
+            papplet.beginShape(papplet.POLYGON);
+            papplet.fill(0);
+            papplet.stroke(255);
+            papplet.strokeWeight(3);
+            int[] xpts = {150, 200, 300, 400, 450, 350, 300, 250, 150};
+            int[] ypts = {350, 450, 500, 450, 350, 420, 430, 420, 350};
 
-        for(int i = 0; i<8;i++){
-            papplet.vertex(xpts[i],ypts[i]);
+            for (int i = 0; i < 8; i++) {
+                papplet.vertex(xpts[i], ypts[i]);
+            }
+            papplet.endShape();
+            papplet.popMatrix();
         }
 
-//        papplet.vertex(150,350);
-//        papplet.vertex(200,-450);
-//        papplet.vertex(300,-500);
-//        papplet.vertex(400,-450);
-//        papplet.vertex(450,-350);
-//        papplet.vertex(350,-420);
-//        papplet.vertex(300,-430);
-//        papplet.vertex(250,-420);
-//        papplet.vertex(150,-350);
-        papplet.endShape();
-        papplet.popMatrix();
+        //Headband
+        papplet.fill(120,120,120);
+        papplet.rect(300,100,350,40);
 
+        //blink
+        if(blink > 1 || blink == 1) {
+            papplet.ellipse(200, 240, 100, 50);
+            papplet.ellipse(400, 240, 100, 50);
+        }
 
+        //horse1
+        if(horse1 ==1) {
+            papplet.fill(255, 0, 0);
+            papplet.rect(150, 100, 50, 40);
+        }
+
+        //horse2
+        if(horse2 ==1) {
+            papplet.fill(0, 255, 0);
+            papplet.rect(225, 100, 100, 40);
+        }
+
+        //forehead
+        if(forehead > 1||forehead ==1) {
+            papplet.fill(0);
+            papplet.rect(300, 100, 50, 40);
+        }
+
+        //horse3
+        if(horse3 ==1) {
+            papplet.fill(50, 90, 255);
+            papplet.rect(375, 100, 100, 40);
+        }
+
+        //horse4
+        if(horse4 ==1) {
+            papplet.fill(0, 255, 255);
+            papplet.rect(450, 100, 50, 40);
+        }
 
     }
 

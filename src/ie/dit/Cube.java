@@ -72,7 +72,6 @@ public class Cube {
 //        }
 
         papplet.rotateX(-ymag);
-
         papplet.rotateY(-xmag);
         papplet.box(betaRGB,deltaRGB,betaRGB);
 
