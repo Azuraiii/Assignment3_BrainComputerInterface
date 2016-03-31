@@ -6,36 +6,28 @@ import processing.core.PApplet;
  * Created by azkei on 30/03/2016.
  */
 public class graphWindow extends PApplet{
-
     //waves
     public float rawAlpha;
     public float rawBeta;
     public float rawDelta;
     public float rawTheta;
     public float rawGamma;
-
     //eeg
     public float rawEeg;
-
     //experimentals
     public float rawConcentration;
     public float rawMellow;
-
-
     //waves
     float alpha;
     float beta;
     float delta;
     float theta;
     float gamma;
-
     //eeg
     float eeg;
-
     //experimentals
     float concentration;
     float mellow;
-
 
     public graphWindow() {
         super();
@@ -80,11 +72,11 @@ public class graphWindow extends PApplet{
         float gammaHeight = map(gamma,0,1,0,height);
 
         //mapping eeg
-        float eegHeight = map(eeg,500,1200,0,height);
+        float eegHeight = map(eeg,500,1500,0,height);
 
         //experimentals
-        float concentrationHeight = map(concentration,500,1200,0,height);
-        float mellowHeight = map(mellow,500,1200,0,height);
+        float concentrationHeight = map(concentration,0,1,0,height);
+        float mellowHeight = map(mellow,0,1,0,height);
 
        // System.out.println(alphaHeight);
         float gap = (float)width/8;

@@ -1,6 +1,5 @@
 package ie.dit;
 
-import controlP5.ControlP5;
 import oscP5.OscMessage;
 import oscP5.OscP5;
 import processing.core.PApplet;
@@ -20,7 +19,6 @@ public class Main extends PApplet {
     PApplet papplet;
     Menu intf;
     OscP5 oscP5;
-    ControlP5 cp5;
     Cube cube;
     TestHeadset testHeadset;
     graphWindow gw;
@@ -130,50 +128,48 @@ public class Main extends PApplet {
 
     //this method brings in real time data from the Muse headband.
     void oscEvent(OscMessage msg){
-
         //accelerometer
-        if(msg.checkAddrPattern("/muse/acc")==true) {
+        if(msg.checkAddrPattern("/muse/acc")==true){
             acc_raw = msg.get(0).floatValue();
             //System.out.println("acc_raw: "+acc_raw);
         }
         //eeg
-        if(msg.checkAddrPattern("/muse/eeg")==true) {
+        if(msg.checkAddrPattern("/muse/eeg")==true){
             eeg_raw = msg.get(0).floatValue();
-           // System.out.println("eeg_raw: "+eeg_raw);
+            //System.out.println("eeg_raw: "+eeg_raw);
         }
         //waves
-        if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true) {
+        if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true){
             alpha_raw = msg.get(1).floatValue();
              // System.out.println("alpha_Raw: "+alpha_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/beta_relative")==true) {
+        if(msg.checkAddrPattern("/muse/elements/beta_relative")==true){
             beta_raw = msg.get(1).floatValue();
               //System.out.println("beta_Raw: "+beta_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/gamma_relative")==true) {
+        if(msg.checkAddrPattern("/muse/elements/gamma_relative")==true){
             gamma_raw = msg.get(1).floatValue();
            // System.out.println("gamma_Raw: "+gamma_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/theta_relative")==true) {
+        if(msg.checkAddrPattern("/muse/elements/theta_relative")==true){
             theta_raw = msg.get(1).floatValue();
            // System.out.println("theta_Raw: "+theta_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/delta_relative")==true) {
+        if(msg.checkAddrPattern("/muse/elements/delta_relative")==true){
             delta_raw = msg.get(1).floatValue();
             //System.out.println("delta_raw: "+delta_raw);
         }
-
         //experimentals
-        if(msg.checkAddrPattern("/muse/elements/experimental/concentration")==true) {
+        if(msg.checkAddrPattern("/muse/elements/experimental/concentration")==true){
             concentration_raw = msg.get(0).floatValue();
-            // System.out.println("concentration raw: "+concentration_raw);
+             //System.out.println("concentration raw: "+concentration_raw);
         }
-        if(msg.checkAddrPattern("muse/elements/experimental/mellow")==true){
+        if(msg.checkAddrPattern("/muse/elements/experimental/mellow")==true){
             mellow_raw = msg.get(0).floatValue();
+           // System.out.println("mellow_raw:" +mellow_raw);
         }
-
         //horseshoe test
-        if(msg.checkAddrPattern("/muse/elements/horseshoe")== true){
+        if(msg.checkAddrPattern("/muse/elements/horseshoe")==true){
             horse1 = msg.get(0).floatValue();
             horse2 = msg.get(1).floatValue();
             horse3 = msg.get(2).floatValue();
