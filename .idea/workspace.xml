@@ -4,10 +4,12 @@
     <bookmark url="file://$PROJECT_DIR$/src/ie/dit/Cube.java" line="36" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="testing, horseshoes working :D&#10;">
+    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="headset test fully functional, need to work on the design later&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Main.java" afterPath="$PROJECT_DIR$/src/ie/dit/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Menu.java" afterPath="$PROJECT_DIR$/src/ie/dit/Menu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/TestHeadset.java" afterPath="$PROJECT_DIR$/src/ie/dit/TestHeadset.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/graphWindow.java" afterPath="$PROJECT_DIR$/src/ie/dit/graphWindow.java" />
     </list>
     <ignored path="MuseProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,12 +36,12 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="3.6682577">
-                  <caret line="180" column="37" selection-start-line="180" selection-start-column="37" selection-end-line="180" selection-end-column="37" />
+                <state vertical-scroll-proportion="0.973747">
+                  <caret line="162" column="14" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1981#1982#0" expanded="true" />
-                    <element signature="e#2014#2015#0" expanded="true" />
+                    <element signature="e#1644#1645#0" expanded="true" />
+                    <element signature="e#1677#1678#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -63,7 +65,7 @@
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+                  <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -81,22 +83,27 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TestHeadset.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="TestHeadset.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/TestHeadset.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.0548927">
-                  <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="graphWindow.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="graphWindow.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/graphWindow.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-                  <folding />
+                <state vertical-scroll-proportion="0.20286396">
+                  <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#774#775#0" expanded="true" />
+                    <element signature="e#803#804#0" expanded="true" />
+                    <element signature="e#829#830#0" expanded="true" />
+                    <element signature="e#860#861#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -132,11 +139,11 @@
         <option value="$PROJECT_DIR$/src/ie/dit/DataStream.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/arduinoRobot.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/Gesture.java" />
-        <option value="$PROJECT_DIR$/src/ie/dit/Menu.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/Cube.java" />
+        <option value="$PROJECT_DIR$/src/ie/dit/TestHeadset.java" />
+        <option value="$PROJECT_DIR$/src/ie/dit/Menu.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/graphWindow.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/Main.java" />
-        <option value="$PROJECT_DIR$/src/ie/dit/TestHeadset.java" />
       </list>
     </option>
   </component>
@@ -684,7 +691,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459450290010</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="headset test fully functional, need to work on the design later&#10;">
+      <created>1459451145896</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1459451145896</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -779,7 +792,8 @@
     <MESSAGE value="progress, test headset, got rid of gesture&#10;" />
     <MESSAGE value="smiling render done.&#10;" />
     <MESSAGE value="testing, horseshoes working :D&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing, horseshoes working :D&#10;" />
+    <MESSAGE value="headset test fully functional, need to work on the design later&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="headset test fully functional, need to work on the design later&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -787,7 +801,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ie/dit/Main.java</url>
-          <line>84</line>
+          <line>72</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -815,8 +829,8 @@
           <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1981#1982#0" expanded="true" />
-            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -869,14 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/Cube.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -887,31 +893,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/graphWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/TestHeadset.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/graphWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20286396">
+          <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
+          <folding>
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.6682577">
-          <caret line="180" column="37" selection-start-line="180" selection-start-column="37" selection-end-line="180" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.973747">
+          <caret line="162" column="14" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1981#1982#0" expanded="true" />
-            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/TestHeadset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0548927">
-          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>

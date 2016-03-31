@@ -47,9 +47,9 @@ public class Main extends PApplet {
     //forehead var
     public int forehead;
     //blink
-    public float blink;
+    public int blink;
     //jaw clench
-    public float jaw_clench;
+    public int jaw_clench;
 
     static int recvPort = 5000;
 
@@ -59,7 +59,22 @@ public class Main extends PApplet {
         cube = new Cube(this, alpha_raw,beta_raw,delta_raw,concentration_raw);
         papplet = new PApplet();
 
-        gw = new graphWindow(gw);
+        gw = new graphWindow();
+
+
+        //this code helps pass by reference menu var
+        intf = new Menu(this);
+        intf.menu = 0;
+
+
+    }
+
+    public void settings(){
+        size(600,600,P3D);
+    }
+
+    public void draw(){
+
         //waves
         gw.rawAlpha = alpha_raw;
         gw.rawBeta = beta_raw;
@@ -74,23 +89,15 @@ public class Main extends PApplet {
         gw.rawConcentration = concentration_raw;
         gw.rawMellow = mellow_raw;
 
+        //System.out.println("gw.rawAlpha: "+gw.rawAlpha);
 
-        //this code helps pass by reference menu var
-        intf = new Menu(this);
-        intf.menu = 0;
-
-    }
-
-    public void settings(){
-        size(600,600,P3D);
-    }
-
-    public void draw(){
+        gw.loadData(gw);
 
 
             switch (intf.menu) {
                 case 0:
                     //menu screen pass by reference
+
                     intf.render(intf);
                     break;
                 case 1:
@@ -136,23 +143,24 @@ public class Main extends PApplet {
         }
         //waves
         if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true) {
-            alpha_raw = msg.get(0).floatValue();
-            //  System.out.println("alpha_Raw: "+alpha_raw);
+            alpha_raw = msg.get(1).floatValue();
+             // System.out.println("alpha_Raw: "+alpha_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/beta_relative")==true) {
-            beta_raw = msg.get(0).floatValue();
+            beta_raw = msg.get(1).floatValue();
               //System.out.println("beta_Raw: "+beta_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/gamma_relative")==true) {
-            gamma_raw = msg.get(0).floatValue();
-            //System.out.println("gamma_Raw: "+gamma_raw);
+            gamma_raw = msg.get(1).floatValue();
+           // System.out.println("gamma_Raw: "+gamma_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/theta_relative")==true) {
-            theta_raw = msg.get(0).floatValue();
+            theta_raw = msg.get(1).floatValue();
+           // System.out.println("theta_Raw: "+theta_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/delta_relative")==true) {
-            delta_raw = msg.get(0).floatValue();
-           // System.out.println("delta_raw: "+delta_raw);
+            delta_raw = msg.get(1).floatValue();
+            //System.out.println("delta_raw: "+delta_raw);
         }
 
         //experimentals
@@ -179,14 +187,14 @@ public class Main extends PApplet {
 
         if(msg.checkAddrPattern("/muse/elements/touching_forehead")==true){
             forehead = msg.get(0).intValue();
-            System.out.println("forehead: "+forehead);
+            //System.out.println("forehead: "+forehead);
         }
-//        if(msg.checkAddrPattern("/muse/elements/blink")==true){
-//            blink = msg.get(0).floatValue();
-//        }
-//        if(msg.checkAddrPattern("/muse/elements/jaw_clench")==true){
-//            jaw_clench = msg.get(0).floatValue();
-//        }
+        if(msg.checkAddrPattern("/muse/elements/blink")==true){
+            blink = msg.get(0).intValue();
+        }
+        if(msg.checkAddrPattern("/muse/elements/jaw_clench")==true){
+            jaw_clench = msg.get(0).intValue();
+        }
     }
 
     public static void main(String[] args)

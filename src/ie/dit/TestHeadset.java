@@ -16,12 +16,12 @@ public class TestHeadset{
     float horse2;
     float horse3;
     float horse4;
-    float blink;
+    int blink;
 
     int forehead;
-    float jaw_clench;
+    int jaw_clench;
 
-    TestHeadset(PApplet p, float horse1, float horse2,float horse3,float horse4, float blink, int forehead,float jaw_clench)
+    TestHeadset(PApplet p, float horse1, float horse2,float horse3,float horse4, int blink, int forehead,int jaw_clench)
     {
         this.papplet = p;
         this.horse1 = horse1;
@@ -33,10 +33,10 @@ public class TestHeadset{
         this.jaw_clench = jaw_clench;
     }
 
-    void render(float horse1,float horse2,float horse3,float horse4, int forehead,float blink ,float jaw_clench){
+    void render(float horse1,float horse2,float horse3,float horse4, int forehead,int blink ,int jaw_clench){
         papplet.background(255);
 
-        if(jaw_clench > 1 || jaw_clench == 1) {
+        if(jaw_clench == 1) {
             papplet.pushMatrix();
             papplet.beginShape(papplet.POLYGON);
             papplet.fill(0);

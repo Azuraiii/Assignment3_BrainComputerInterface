@@ -6,6 +6,7 @@ import processing.core.PApplet;
  * Created by azkei on 22/03/2016.
  */
 public class Menu{
+
     PApplet papplet;
     public int menu;
 

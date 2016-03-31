@@ -36,27 +36,12 @@ public class graphWindow extends PApplet{
     float concentration;
     float mellow;
 
-    graphWindow(graphWindow gw){
+
+    public graphWindow() {
         super();
         PApplet.runSketch(new String[]{
                 this.getClass().getSimpleName()
         },this);
-        //waves
-        this.alpha =1000; //gw.rawAlpha;
-        this.beta =1000; //gw.rawBeta;
-        this.delta =1000; //gw.rawDelta;
-        this.theta =1000; //gw.rawTheta;
-        this.gamma=1000; //gw.rawGamma;
-
-        //eeg
-        this.eeg = 1000; //gw.rawEeg;
-
-        //experimentals
-        this.concentration = 1000; //gw.rawConcentration;
-        this.mellow = 1000; //gw.rawMellow;
-
-
-
     }
 
     public void settings(){
@@ -67,13 +52,32 @@ public class graphWindow extends PApplet{
         background(255);
     }
 
+    public void loadData(graphWindow gw){
+        //waves
+        this.alpha = gw.rawAlpha;
+        this.beta = gw.rawBeta;
+        this.delta = gw.rawDelta;
+        this.theta = gw.rawTheta;
+        this.gamma= gw.rawGamma;
+
+        //eeg
+        this.eeg = gw.rawEeg;
+
+        //experimentals
+        this.concentration = gw.rawConcentration;
+        this.mellow = gw.rawMellow;
+    }
+
     public void draw(){
+        background(0);
+
+
         //mapping the waves
-        float alphaHeight = map(alpha,500,1200,0,height);
-        float betaHeight = map(beta,500,1200,0,height);
-        float deltaHeight = map(delta,500,1200,0,height);
-        float thetaHeight = map(theta,500,1200,0,height);
-        float gammaHeight = map(gamma,500,1200,0,height);
+        float alphaHeight = map(alpha,0,1,0,height);
+        float betaHeight = map(beta,0,1,0,height);
+        float deltaHeight = map(delta,0,1,0,height);
+        float thetaHeight = map(theta,0,1,0,height);
+        float gammaHeight = map(gamma,0,1,0,height);
 
         //mapping eeg
         float eegHeight = map(eeg,500,1200,0,height);
