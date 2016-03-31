@@ -6,7 +6,6 @@ import processing.core.PApplet;
  * Created by azkei on 23/03/2016.
  */
 public class TestHeadset{
-
     //horseshoe
     //forehead
     //blink

@@ -48,7 +48,7 @@ public class Main extends PApplet {
     public int blink;
     //jaw clench
     public int jaw_clench;
-
+    //Port for bluetooth
     static int recvPort = 5000;
 
     public void setup(){
@@ -56,41 +56,34 @@ public class Main extends PApplet {
         testHeadset = new TestHeadset(this,horse1,horse2,horse3,horse4,blink,forehead,jaw_clench);
         cube = new Cube(this, alpha_raw,beta_raw,delta_raw,concentration_raw);
         papplet = new PApplet();
-
         gw = new graphWindow();
-
 
         //this code helps pass by reference menu var
         intf = new Menu(this);
         intf.menu = 0;
-
-
     }
 
     public void settings(){
+        //P3D for working with 3d objects
         size(600,600,P3D);
     }
 
     public void draw(){
 
+        //this is for the real time bar graph window
         //waves
         gw.rawAlpha = alpha_raw;
         gw.rawBeta = beta_raw;
         gw.rawDelta = delta_raw;
         gw.rawTheta = theta_raw;
         gw.rawGamma = gamma_raw;
-
         //eeg
         gw.rawEeg = eeg_raw;
-
         //experimentals
         gw.rawConcentration = concentration_raw;
         gw.rawMellow = mellow_raw;
-
-        //System.out.println("gw.rawAlpha: "+gw.rawAlpha);
-
+        //this function passes the waves into the new window in real time
         gw.loadData(gw);
-
 
             switch (intf.menu) {
                 case 0:
@@ -116,7 +109,6 @@ public class Main extends PApplet {
                     exit();
                     break;
             }
-
     }
 
     public void keyPressed(){
@@ -178,9 +170,7 @@ public class Main extends PApplet {
 //            System.out.println("horse2: "+horse2);
 //            System.out.println("horse3: "+horse3);
 //            System.out.println("horse4: "+horse4);
-
         }
-
         if(msg.checkAddrPattern("/muse/elements/touching_forehead")==true){
             forehead = msg.get(0).intValue();
             //System.out.println("forehead: "+forehead);

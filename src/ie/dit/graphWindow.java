@@ -62,8 +62,6 @@ public class graphWindow extends PApplet{
 
     public void draw(){
         background(0);
-
-
         //mapping the waves
         float alphaHeight = map(alpha,0,1,0,height);
         float betaHeight = map(beta,0,1,0,height);
@@ -74,7 +72,7 @@ public class graphWindow extends PApplet{
         //mapping eeg
         float eegHeight = map(eeg,500,1500,0,height);
 
-        //experimentals
+        //mapping experimentals
         float concentrationHeight = map(concentration,0,1,0,height);
         float mellowHeight = map(mellow,0,1,0,height);
 
