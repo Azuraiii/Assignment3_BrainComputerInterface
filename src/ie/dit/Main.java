@@ -7,9 +7,6 @@ import processing.core.PApplet;
 //go to cmd
 //type: muse-io --device Muse --60hz --osc osc.udp://localhost:5000
 
-//to do here:
-//pass headset data into the classes
-//create the menu here
 
 /**
  * Created by azkei on 22/03/2016.
@@ -98,7 +95,8 @@ public class Main extends PApplet {
                     break;
                 case 2:
                     //mind cube here
-                    cube.drawCube(alpha_raw, beta_raw, delta_raw, concentration_raw);
+                    cube.getMax(alpha_raw,beta_raw,delta_raw,theta_raw,gamma_raw,eeg_raw,concentration_raw,mellow_raw);
+                    cube.drawCube(concentration_raw);
 
                     break;
                 case 3:
@@ -118,7 +116,7 @@ public class Main extends PApplet {
         }
     }
 
-    //this method brings in real time data from the Muse headband.
+    //this method brings in real time bluetooth data from the Muse headband.
     void oscEvent(OscMessage msg){
         //accelerometer
         if(msg.checkAddrPattern("/muse/acc")==true){

@@ -22,7 +22,7 @@ public class Cube {
     float zAngle;
     float xSpeed,ySpeed,zSpeed;
 
-
+    int colorNum =0;
 
 
 
@@ -34,29 +34,80 @@ public class Cube {
         this.concentration_raw = concentration_raw;
     }
 
+    public float getMax(float alpha_raw, float beta_raw, float delta_raw, float theta_raw, float gamma_raw, float eeg_raw, float concentration_raw, float mellow_raw) {
 
-    void drawCube(float alpha_raw,float beta_raw,float delta_raw, float concentration_raw){
+        //mapping the waves
+        float alpha = papplet.map(alpha_raw,0,1,0,100);
+        float beta = papplet.map(beta_raw,0,1,0,100);
+        float delta = papplet.map(delta_raw,0,1,0,100);
+        float theta = papplet.map(theta_raw,0,1,0,100);
+        float gamma = papplet.map(gamma_raw,0,1,0,100);
+        //mapping eeg
+        float eeg = papplet.map(eeg_raw,500,1500,0,100);
+        //mapping experimentals
+        float concentration = papplet.map(concentration_raw,0,1,0,100);
+        float mellow = papplet.map(mellow_raw,0,1,0,100);
 
+        float[] array = new float[]{alpha,beta,gamma,delta,theta,gamma,eeg,concentration,mellow, };
+        int max = 0;
+
+
+        for(int i=0;i<array.length;i++){
+            if(array[i] > max){
+                max = (int) array[i];
+                //System.out.println("delta " + delta_raw);
+            }
+
+        }
+
+        if(max == alpha){
+            //alpha
+            return colorNum = 1;
+        }
+
+        if(max == beta){
+            //beta
+            return colorNum = 2;
+        }
+        if(max == delta){
+            //delta
+            return colorNum = 3;
+        }
+        if(max == theta){
+            //theta
+            return colorNum = 4;
+        }
+        if(max == gamma){
+            //gamma
+            return colorNum = 5;
+        }
+        if(max == eeg){
+            //eeg
+            return colorNum = 6;
+        }
+        if(max == concentration){
+            //concentration
+            return colorNum = 7;
+        }
+        if(max == mellow){
+            //mellow
+            return colorNum = 8;
+        }
+
+        return max;
+    }
+
+
+    void drawCube(float concentration_raw){
+
+        System.out.println("colorNum: " + colorNum);
         papplet.camera();
         papplet.lights();
 
-
-
-        //mapping out raw waves
-        float alpha = alpha_raw;
-        float alphaRGB = papplet.map(alpha, 0, 1, 0, 255);
-        //System.out.println("alphaRGB: "+alphaRGB);
-
-        float beta = beta_raw;
-        float betaRGB = papplet.map(beta,0,1, 0, 255);
-        //System.out.println("betaRGB: "+betaRGB);
-
-        float delta = delta_raw;
-        float deltaRGB = papplet.map(delta, 0, 1, 0, 255);
-        //System.out.println("deltaRGB: "+deltaRGB);
+        //System.out.println("colorNum: " + colorNum);
 
         float concentration = concentration_raw;
-       // float concentrationRGB = papplet.map(concentration, 0, 1, 100, 255);
+        float concentrationRGB = papplet.map(concentration, 0, 1, 0, 300);
         //System.out.println("concentrationRGB: "+concentrationRGB);
 
         if(concentration > 0){
@@ -75,10 +126,8 @@ public class Cube {
         zAngle += zSpeed;
 
         papplet.background(0);
-
-
         papplet.pushMatrix();
-        papplet.translate(300,300,300);
+        papplet.translate(300,300,100+concentrationRGB);
         papplet.rotateX(xAngle);
         papplet.rotateY(yAngle);
         papplet.rotateZ(zAngle);
@@ -87,4 +136,6 @@ public class Cube {
         papplet.popMatrix();
 
     }//end drawCube
+
+
 }//end class
