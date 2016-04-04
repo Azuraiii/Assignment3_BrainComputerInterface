@@ -14,6 +14,7 @@ public class Cube {
     float beta_raw;
     float delta_raw;
     float concentration_raw;
+    float mellow_raw;
 
     float size = 75;
 
@@ -24,12 +25,13 @@ public class Cube {
 
     int colorNum =0;
 
-    public Cube(PApplet papplet, float alpha_raw, float beta_raw, float delta_raw,float concentration_raw){
+    public Cube(PApplet papplet, float alpha_raw, float beta_raw, float delta_raw,float concentration_raw,float mellow_raw){
         this.papplet=papplet;
         this.alpha_raw = alpha_raw;
         this.beta_raw =  beta_raw;
         this.delta_raw = delta_raw;
         this.concentration_raw = concentration_raw;
+        this.mellow_raw = mellow_raw;
     }
 
     public float getMax(float alpha_raw, float beta_raw, float delta_raw, float theta_raw, float gamma_raw, float eeg_raw, float concentration_raw, float mellow_raw) {
@@ -100,7 +102,7 @@ public class Cube {
     }
 
 
-    void drawCube(float concentration_raw){
+    void drawCube(float concentration_raw,float mellow_raw){
 
         papplet.camera();
         papplet.lights();
@@ -109,6 +111,10 @@ public class Cube {
 
         float concentration = concentration_raw;
         float concentrationRGB = papplet.map(concentration, 0, 1, 0, 300);
+        //System.out.println("concentrationRGB: "+concentrationRGB);
+
+        float mellow= mellow_raw;
+        float mellowRGB = papplet.map(mellow, 0, 1, 255, 0);
         //System.out.println("concentrationRGB: "+concentrationRGB);
 
         if(concentration > 0){
@@ -127,12 +133,14 @@ public class Cube {
         zAngle += zSpeed;
 
         papplet.background(0);
+        papplet.fill(255,0,0,mellowRGB);
         papplet.pushMatrix();
         papplet.translate(300,300,100+concentrationRGB);
         papplet.rotateX(xAngle);
         papplet.rotateY(yAngle);
         papplet.rotateZ(zAngle);
         papplet.noStroke();
+
         papplet.box(size);
         papplet.popMatrix();
 

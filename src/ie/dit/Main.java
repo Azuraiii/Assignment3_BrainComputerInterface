@@ -64,7 +64,7 @@ public class Main extends PApplet {
     public void setup(){
         oscP5 = new OscP5(this, recvPort);
         testHeadset = new TestHeadset(this,horse1,horse2,horse3,horse4,blink,forehead,jaw_clench);
-        cube = new Cube(this, alpha_raw,beta_raw,delta_raw,concentration_raw);
+        cube = new Cube(this, alpha_raw1,beta_raw1,delta_raw1,concentration_raw,mellow_raw);
         papplet = new PApplet();
         gw = new graphWindow();
 
@@ -89,7 +89,7 @@ public class Main extends PApplet {
         gw.rawAlpha3 = alpha_raw3;
 
         gw.rawBeta1 = beta_raw1;
-        gw.rawBeta2 = beta_raw2
+        gw.rawBeta2 = beta_raw2;
         gw.rawBeta3 = beta_raw3;
 
         gw.rawDelta1 = delta_raw1;
@@ -124,8 +124,8 @@ public class Main extends PApplet {
                     break;
                 case 2:
                     //mind cube here
-                    cube.getMax(alpha_raw,beta_raw,delta_raw,theta_raw,gamma_raw,eeg_raw,concentration_raw,mellow_raw);
-                    cube.drawCube(concentration_raw);
+                    //cube.getMax(alpha_raw,beta_raw,delta_raw,theta_raw,gamma_raw,eeg_raw,concentration_raw,mellow_raw);
+                    cube.drawCube(concentration_raw,mellow_raw);
 
                     break;
                 case 3:

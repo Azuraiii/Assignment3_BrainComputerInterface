@@ -134,7 +134,7 @@ public class graphWindow extends PApplet{
         float mellowHeight = map(mellow,0,1,0,height);
 
        // System.out.println(alphaHeight);
-        float gap = (float)width/8;
+        float gap = (float)width/18;
 
         //waves
         float x1 = 0*gap;
@@ -210,8 +210,5 @@ public class graphWindow extends PApplet{
         //random color for mellow
         fill(250,120,10);
         rect(x18,height,gap,-mellowHeight);
-
     }
-
-
 }
