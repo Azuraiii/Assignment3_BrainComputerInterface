@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="color  change still not working. the colorNum variable keeps getting stuck. on 8 and 7..... maybe if statement is not the answer....uggghhh&#10;">
+    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="changes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Cube.java" afterPath="$PROJECT_DIR$/src/ie/dit/Cube.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Main.java" afterPath="$PROJECT_DIR$/src/ie/dit/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/arduinoRobot.java" afterPath="$PROJECT_DIR$/src/ie/dit/arduinoRobot.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/graphWindow.java" afterPath="$PROJECT_DIR$/src/ie/dit/graphWindow.java" />
     </list>
     <ignored path="MuseProject.iws" />
@@ -33,7 +30,7 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="4.230404">
+                <state vertical-scroll-proportion="0.95961994">
                   <caret line="175" column="9" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -70,7 +67,7 @@
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Cube.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="12" selection-end-column="20" />
+                  <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
                   <folding>
                     <element signature="docComment;class#Cube#0" expanded="false" />
                   </folding>
@@ -91,8 +88,8 @@
           <file leaf-file-name="graphWindow.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/graphWindow.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="2.2517815">
-                  <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
+                <state vertical-scroll-proportion="0.51543945">
+                  <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
                   <folding>
                     <element signature="e#1241#1242#0" expanded="true" />
                     <element signature="e#1270#1271#0" expanded="true" />
@@ -716,7 +713,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459470360665</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="changes">
+      <created>1459780699573</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1459780699573</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -816,7 +819,8 @@
     <MESSAGE value="all graphs working. :D happy days !&#10;" />
     <MESSAGE value="cube rotation works&#10;" />
     <MESSAGE value="color  change still not working. the colorNum variable keeps getting stuck. on 8 and 7..... maybe if statement is not the answer....uggghhh&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="color  change still not working. the colorNum variable keeps getting stuck. on 8 and 7..... maybe if statement is not the answer....uggghhh&#10;" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -896,14 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/TestHeadset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -920,19 +916,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/Cube.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="docComment;class#Cube#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.230404">
+        <state vertical-scroll-proportion="0.95961994">
           <caret line="175" column="9" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -940,10 +926,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/Cube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="docComment;class#Cube#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/TestHeadset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/graphWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2517815">
-          <caret line="190" column="40" selection-start-line="190" selection-start-column="40" selection-end-line="190" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.51543945">
+          <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
           <folding>
             <element signature="e#1241#1242#0" expanded="true" />
             <element signature="e#1270#1271#0" expanded="true" />

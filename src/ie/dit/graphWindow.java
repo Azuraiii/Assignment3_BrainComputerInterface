@@ -149,57 +149,67 @@ public class graphWindow extends PApplet{
         //experimentals
         float x7 =6*gap;
         float x8 =7*gap;
+        float x9 =8*gap;
+        float x10 =9*gap;
+        float x11 =10*gap;
+        float x12 =11*gap;
+        float x13 =12*gap;
+        float x14 =13*gap;
+        float x15 =14*gap;
+        float x16 =15*gap;
+        float x17 =16*gap;
+        float x18 =17*gap;
 
         //red for alpha
         fill(255,0,0);
         rect(x1,height,gap,-alphaHeight1);
         fill(255,0,0);
-        rect(x1,height,gap,-alphaHeight2);
+        rect(x2,height,gap,-alphaHeight2);
         fill(255,0,0);
-        rect(x1,height,gap,-alphaHeight3);
+        rect(x3,height,gap,-alphaHeight3);
 
         //blue for beta
         fill(0,0,255);
-        rect(x2,height,gap,-betaHeight1);
+        rect(x4,height,gap,-betaHeight1);
         fill(0,0,255);
-        rect(x2,height,gap,-betaHeight2);
+        rect(x5,height,gap,-betaHeight2);
         fill(0,0,255);
-        rect(x2,height,gap,-betaHeight3);
+        rect(x6,height,gap,-betaHeight3);
 
         //purple for delta
         fill(160,30,240);
-        rect(x3,height,gap,-deltaHeight1);
+        rect(x7,height,gap,-deltaHeight1);
         fill(160,30,240);
-        rect(x3,height,gap,-deltaHeight2);
+        rect(x8,height,gap,-deltaHeight2);
         fill(160,30,240);
-        rect(x3,height,gap,-deltaHeight3);
+        rect(x9,height,gap,-deltaHeight3);
 
         //green for theta
         fill(0,255,0);
-        rect(x4,height,gap,-thetaHeight1);
+        rect(x10,height,gap,-thetaHeight1);
         fill(0,255,0);
-        rect(x4,height,gap,-thetaHeight2);
+        rect(x11,height,gap,-thetaHeight2);
         fill(0,255,0);
-        rect(x4,height,gap,-thetaHeight3);
+        rect(x12,height,gap,-thetaHeight3);
 
         //yellow for gamma
         fill(255,255,0);
-        rect(x5,height,gap,-gammaHeight1);
+        rect(x13,height,gap,-gammaHeight1);
         fill(255,255,0);
-        rect(x5,height,gap,-gammaHeight2);
+        rect(x14,height,gap,-gammaHeight2);
         fill(255,255,0);
-        rect(x5,height,gap,-gammaHeight3);
+        rect(x15,height,gap,-gammaHeight3);
 
         //random color for eeg
         fill(120,120,0);
-        rect(x6,height,gap,-eegHeight);
+        rect(x16,height,gap,-eegHeight);
 
         //random color for concentration
         fill(50,50,200);
-        rect(x7,height,gap,-concentrationHeight);
+        rect(x17,height,gap,-concentrationHeight);
         //random color for mellow
         fill(250,120,10);
-        rect(x8,height,gap,-mellowHeight);
+        rect(x18,height,gap,-mellowHeight);
 
     }
 
