@@ -6,8 +6,6 @@ import processing.core.PApplet;
 //Connecting to muse headband
 //go to cmd
 //type: muse-io --device Muse --60hz --osc osc.udp://localhost:5000
-
-
 /**
  * Created by azkei on 22/03/2016.
  */
@@ -19,14 +17,29 @@ public class Main extends PApplet {
     Cube cube;
     TestHeadset testHeadset;
     graphWindow gw;
+    arduinoRobot ar;
 
     //public variables where data flows
     //brainwaves
-    public float delta_raw;
-    public float theta_raw;
-    public float alpha_raw;
-    public float beta_raw;
-    public float gamma_raw;
+    public float alpha_raw1;
+    public float alpha_raw2;
+    public float alpha_raw3;
+
+    public float beta_raw1;
+    public float beta_raw2;
+    public float beta_raw3;
+
+    public float delta_raw1;
+    public float delta_raw2;
+    public float delta_raw3;
+
+    public float theta_raw1;
+    public float theta_raw2;
+    public float theta_raw3;
+
+    public float gamma_raw1;
+    public float gamma_raw2;
+    public float gamma_raw3;
     //experimental
     public float concentration_raw;
     public float mellow_raw;
@@ -55,6 +68,8 @@ public class Main extends PApplet {
         papplet = new PApplet();
         gw = new graphWindow();
 
+        ar = new arduinoRobot(this);
+
         //this code helps pass by reference menu var
         intf = new Menu(this);
         intf.menu = 0;
@@ -69,11 +84,25 @@ public class Main extends PApplet {
 
         //this is for the real time bar graph window
         //waves
-        gw.rawAlpha = alpha_raw;
-        gw.rawBeta = beta_raw;
-        gw.rawDelta = delta_raw;
-        gw.rawTheta = theta_raw;
-        gw.rawGamma = gamma_raw;
+        gw.rawAlpha1 = alpha_raw1;
+        gw.rawAlpha2 = alpha_raw2;
+        gw.rawAlpha3 = alpha_raw3;
+
+        gw.rawBeta1 = beta_raw1;
+        gw.rawBeta2 = beta_raw2
+        gw.rawBeta3 = beta_raw3;
+
+        gw.rawDelta1 = delta_raw1;
+        gw.rawDelta2 = delta_raw2;
+        gw.rawDelta3 = delta_raw3;
+
+        gw.rawTheta1 = theta_raw1;
+        gw.rawTheta2 = theta_raw2;
+        gw.rawTheta3 = theta_raw3;
+
+        gw.rawGamma1 = gamma_raw1;
+        gw.rawGamma2 = gamma_raw2;
+        gw.rawGamma3 = gamma_raw3;
         //eeg
         gw.rawEeg = eeg_raw;
         //experimentals
@@ -101,6 +130,8 @@ public class Main extends PApplet {
                     break;
                 case 3:
                     //arduino robot here
+                    ar.update(concentration_raw,acc_raw);
+
                     break;
                 case 4:
                     //exit
@@ -120,7 +151,7 @@ public class Main extends PApplet {
     void oscEvent(OscMessage msg){
         //accelerometer
         if(msg.checkAddrPattern("/muse/acc")==true){
-            acc_raw = msg.get(0).floatValue();
+            acc_raw = msg.get(2).floatValue();
             //System.out.println("acc_raw: "+acc_raw);
         }
         //eeg
@@ -130,23 +161,38 @@ public class Main extends PApplet {
         }
         //waves
         if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true){
-            alpha_raw = msg.get(1).floatValue();
+            alpha_raw1 = msg.get(0).floatValue();
+            //default
+            alpha_raw2 = msg.get(1).floatValue();
+            alpha_raw3 = msg.get(2).floatValue();
              // System.out.println("alpha_Raw: "+alpha_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/beta_relative")==true){
-            beta_raw = msg.get(1).floatValue();
+            beta_raw1 = msg.get(0).floatValue();
+            //default
+            beta_raw2 = msg.get(1).floatValue();
+            beta_raw3 = msg.get(2).floatValue();
               //System.out.println("beta_Raw: "+beta_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/gamma_relative")==true){
-            gamma_raw = msg.get(1).floatValue();
+            gamma_raw1 = msg.get(0).floatValue();
+            //default
+            gamma_raw2 = msg.get(1).floatValue();
+            gamma_raw3 = msg.get(3).floatValue();
            // System.out.println("gamma_Raw: "+gamma_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/theta_relative")==true){
-            theta_raw = msg.get(1).floatValue();
+            theta_raw1 = msg.get(0).floatValue();
+            //default
+            theta_raw2 = msg.get(1).floatValue();
+            theta_raw3 = msg.get(2).floatValue();
            // System.out.println("theta_Raw: "+theta_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/delta_relative")==true){
-            delta_raw = msg.get(1).floatValue();
+            delta_raw1 = msg.get(0).floatValue();
+            //default
+            delta_raw2 = msg.get(1).floatValue();
+            delta_raw3 = msg.get(2).floatValue();
             //System.out.println("delta_raw: "+delta_raw);
         }
         //experimentals

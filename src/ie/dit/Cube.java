@@ -24,8 +24,6 @@ public class Cube {
 
     int colorNum =0;
 
-
-
     public Cube(PApplet papplet, float alpha_raw, float beta_raw, float delta_raw,float concentration_raw){
         this.papplet=papplet;
         this.alpha_raw = alpha_raw;
@@ -57,7 +55,6 @@ public class Cube {
                 max = (int) array[i];
                 //System.out.println("delta " + delta_raw);
             }
-
         }
 
         if(max == alpha){
@@ -94,13 +91,17 @@ public class Cube {
             return colorNum = 8;
         }
 
+        System.out.println("colorNum: " + colorNum);
+        System.out.println("mellow: " + mellow);
+        System.out.println("max " + max);
+        System.out.println("delta: " + delta);
+
         return max;
     }
 
 
     void drawCube(float concentration_raw){
 
-        System.out.println("colorNum: " + colorNum);
         papplet.camera();
         papplet.lights();
 
