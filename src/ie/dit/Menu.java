@@ -48,8 +48,6 @@ public class Menu{
                 if(papplet.mouseX >105 && papplet.mouseX <455 && papplet.mouseY >435 && papplet.mouseY <525) {
                     intf.menu = 4;
                 }
-            }
-    }
-
-
-}
+            }//end if
+    }//end render
+}//end class

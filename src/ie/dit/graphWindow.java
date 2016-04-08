@@ -5,6 +5,8 @@ import processing.core.PApplet;
 /**
  * Created by azkei on 30/03/2016.
  */
+
+//this class creates a bar graph visualization in real time.
 public class graphWindow extends PApplet{
 
     //waves
@@ -61,20 +63,21 @@ public class graphWindow extends PApplet{
 
 
 
+    //creates a new window
     public graphWindow() {
         super();
         PApplet.runSketch(new String[]{
                 this.getClass().getSimpleName()
         },this);
-    }
+    }//end constructor
 
     public void settings(){
         size(1000,500);
-    }
+    }//end settings
 
     public void setup(){
         background(255);
-    }
+    }//end setup
 
     public void loadData(graphWindow gw){
         //waves
@@ -104,7 +107,7 @@ public class graphWindow extends PApplet{
         //experimentals
         this.concentration = gw.rawConcentration;
         this.mellow = gw.rawMellow;
-    }
+    }//end load data
 
     public void draw(){
         background(0);
@@ -215,5 +218,5 @@ public class graphWindow extends PApplet{
         //random color for mellow
         fill(250,120,10);
         rect(x18,height-yBorder,gap,-mellowHeight);
-    }
-}
+    }//end draw
+}//end class

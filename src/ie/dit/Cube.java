@@ -6,8 +6,6 @@ import processing.core.PApplet;
  * Created by azkei on 23/03/2016.
  */
 public class Cube {
-    //this variable is the constant of 2 PI.
-    private static final float TWO_PI = (float) 6.28318530718;
     PApplet papplet;
     //raw waves from headset
     float alpha_raw;
@@ -16,8 +14,10 @@ public class Cube {
     float concentration_raw;
     float mellow_raw;
 
+    //size of cube
     float size = 75;
 
+    //needed to manipulate the cube
     float xAngle;
     float yAngle;
     float zAngle;
@@ -60,7 +60,6 @@ public class Cube {
                 if (max == alpha) {
                     //alpha
                     return colorNum = 1;
-
                 }
 
                 if (max == beta) {
@@ -110,14 +109,17 @@ public class Cube {
 
         //System.out.println("colorNum: " + colorNum);
 
+        //mapping the concentration values
         float concentration = concentration_raw;
         float concentrationRGB = papplet.map(concentration, 0, 1, 0, 300);
         //System.out.println("concentrationRGB: "+concentrationRGB);
 
+        //mapping the relaxation values
         float mellow = mellow_raw;
         float mellowRGB = papplet.map(mellow, 0, 1, 255, 0);
         //System.out.println("concentrationRGB: "+concentrationRGB);
 
+        //if user is concentrating, make cube speed faster
         if (concentration > 0) {
             xSpeed = (float) 0.02;
             ySpeed = (float) 0.02;
@@ -128,6 +130,7 @@ public class Cube {
             zSpeed = (float) 0.001;
         }
 
+        //add rotation speed
         xAngle += xSpeed;
         yAngle += ySpeed;
         zAngle += zSpeed;
@@ -142,7 +145,6 @@ public class Cube {
         papplet.rotateY(yAngle);
         papplet.rotateZ(zAngle);
         papplet.noStroke();
-
         papplet.box(size);
         papplet.popMatrix();
 

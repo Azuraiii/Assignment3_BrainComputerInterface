@@ -23,22 +23,27 @@ public class Main extends PApplet {
 
     //public variables where data flows
     //brainwaves
+    //alpha
     public float alpha_raw1;
     public float alpha_raw2;
     public float alpha_raw3;
 
+    //beta
     public float beta_raw1;
     public float beta_raw2;
     public float beta_raw3;
 
+    //delta
     public float delta_raw1;
     public float delta_raw2;
     public float delta_raw3;
 
+    //theta
     public float theta_raw1;
     public float theta_raw2;
     public float theta_raw3;
 
+    //gamma
     public float gamma_raw1;
     public float gamma_raw2;
     public float gamma_raw3;
@@ -64,24 +69,29 @@ public class Main extends PApplet {
     static int recvPort = 5000;
 
     public void setup(){
+        //setup stuff
+        //osc for bluetooth event handling
         oscP5 = new OscP5(this, recvPort);
+        //testheadset class
         testHeadset = new TestHeadset(this,horse1,horse2,horse3,horse4,blink,forehead,jaw_clench);
+        //cube class
         cube = new Cube(this, alpha_raw1,beta_raw1,delta_raw1,concentration_raw,mellow_raw);
+        //processing library
         papplet = new PApplet();
+        //graphwindow class
         gw = new graphWindow();
-
-
+        //arduinorobot class
         ar = new arduinoRobot(this);
 
         //this code helps pass by reference menu var
         intf = new Menu(this);
         intf.menu = 0;
-    }
+    }//end setup
 
     public void settings(){
         //P3D for working with 3d objects
         size(600,600,P3D);
-    }
+    }//end settings
 
     public void draw(){
 
@@ -143,15 +153,15 @@ public class Main extends PApplet {
                     //exit
                     exit();
                     break;
-            }
-    }
+            }//end switch
+    }//end draw
 
     public void keyPressed(){
         if( key == ' ')
         {
             intf.menu = 0;
         }
-    }
+    }//end keyPressed
 
     //this method brings in real time bluetooth data from the Muse headband.
     void oscEvent(OscMessage msg){
@@ -239,4 +249,4 @@ public class Main extends PApplet {
         PApplet.runSketch( a, new Main());
     }
 
-}
+}//end main class

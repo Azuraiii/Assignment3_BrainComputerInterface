@@ -18,7 +18,7 @@ public class arduinoRobot{
 
     arduinoRobot(PApplet p){
         this.papplet = p;
-    }
+    }//end constructor
 
     void updateRobot(float concentration_raw,float acc_raw){
         //-500 left accel
@@ -27,9 +27,7 @@ public class arduinoRobot{
 
         float concentration = concentration_raw;
         float accel = acc_raw;
-
-
-    }
+    }//end updateRobot
 
     void arrowRight(float concentration_raw, float acc_raw){
 
@@ -54,9 +52,7 @@ public class arduinoRobot{
             papplet.vertex(xpts1[i], ypts1[i]);
         }
         papplet.endShape();
-
-
-    }
+    }//end arrowRight
 
     void arrowLeft(){
         papplet.beginShape(papplet.POLYGON);
@@ -70,7 +66,7 @@ public class arduinoRobot{
             papplet.vertex(xpts2[i], ypts2[i]);
         }
         papplet.endShape();
-    }
+    }//end arrowLeft
 
     void arrowTop(){
 
@@ -85,7 +81,7 @@ public class arduinoRobot{
             papplet.vertex(xpts3[i], ypts3[i]);
         }
         papplet.endShape();
-    }
+    }//end arrowTop
 
     void arrowBot()
     {
@@ -101,8 +97,6 @@ public class arduinoRobot{
         }
         papplet.endShape();
 
-    }
+    }//end arrowBot
 
-
-
-}
+}//end class
