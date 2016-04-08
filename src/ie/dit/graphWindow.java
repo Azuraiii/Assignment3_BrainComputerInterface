@@ -6,6 +6,7 @@ import processing.core.PApplet;
  * Created by azkei on 30/03/2016.
  */
 public class graphWindow extends PApplet{
+
     //waves
     public float rawAlpha1;
     public float rawAlpha2;
@@ -58,6 +59,8 @@ public class graphWindow extends PApplet{
     float concentration;
     float mellow;
 
+
+
     public graphWindow() {
         super();
         PApplet.runSketch(new String[]{
@@ -66,7 +69,7 @@ public class graphWindow extends PApplet{
     }
 
     public void settings(){
-        size(700,400);
+        size(1000,500);
     }
 
     public void setup(){
@@ -105,6 +108,8 @@ public class graphWindow extends PApplet{
 
     public void draw(){
         background(0);
+
+        float yBorder = (float) (width*0.05);
         //mapping the waves
         float alphaHeight1 = map(alpha1,0,1,0,height);
         float alphaHeight2 = map(alpha2,0,1,0,height);
@@ -161,54 +166,54 @@ public class graphWindow extends PApplet{
         float x18 =17*gap;
 
         //red for alpha
+        fill(55,0,0);
+        rect(x1,height-yBorder,gap,-alphaHeight1);
+        fill(155,0,0);
+        rect(x2,height-yBorder,gap,-alphaHeight2);
         fill(255,0,0);
-        rect(x1,height,gap,-alphaHeight1);
-        fill(255,0,0);
-        rect(x2,height,gap,-alphaHeight2);
-        fill(255,0,0);
-        rect(x3,height,gap,-alphaHeight3);
+        rect(x3,height-yBorder,gap,-alphaHeight3);
 
         //blue for beta
+        fill(0,0,55);
+        rect(x4,height-yBorder,gap,-betaHeight1);
+        fill(0,0,155);
+        rect(x5,height-yBorder,gap,-betaHeight2);
         fill(0,0,255);
-        rect(x4,height,gap,-betaHeight1);
-        fill(0,0,255);
-        rect(x5,height,gap,-betaHeight2);
-        fill(0,0,255);
-        rect(x6,height,gap,-betaHeight3);
+        rect(x6,height-yBorder,gap,-betaHeight3);
 
         //purple for delta
         fill(160,30,240);
-        rect(x7,height,gap,-deltaHeight1);
+        rect(x7,height-yBorder,gap,-deltaHeight1);
         fill(160,30,240);
-        rect(x8,height,gap,-deltaHeight2);
+        rect(x8,height-yBorder,gap,-deltaHeight2);
         fill(160,30,240);
-        rect(x9,height,gap,-deltaHeight3);
+        rect(x9,height-yBorder,gap,-deltaHeight3);
 
         //green for theta
+        fill(0,55,0);
+        rect(x10,height-yBorder,gap,-thetaHeight1);
+        fill(0,155,0);
+        rect(x11,height-yBorder,gap,-thetaHeight2);
         fill(0,255,0);
-        rect(x10,height,gap,-thetaHeight1);
-        fill(0,255,0);
-        rect(x11,height,gap,-thetaHeight2);
-        fill(0,255,0);
-        rect(x12,height,gap,-thetaHeight3);
+        rect(x12,height-yBorder,gap,-thetaHeight3);
 
         //yellow for gamma
+        fill(55,55,0);
+        rect(x13,height-yBorder,gap,-gammaHeight1);
+        fill(155,155,0);
+        rect(x14,height-yBorder,gap,-gammaHeight2);
         fill(255,255,0);
-        rect(x13,height,gap,-gammaHeight1);
-        fill(255,255,0);
-        rect(x14,height,gap,-gammaHeight2);
-        fill(255,255,0);
-        rect(x15,height,gap,-gammaHeight3);
+        rect(x15,height-yBorder,gap,-gammaHeight3);
 
         //random color for eeg
-        fill(120,120,0);
-        rect(x16,height,gap,-eegHeight);
+        fill(120,120,120);
+        rect(x16,height-yBorder,gap,-eegHeight);
 
         //random color for concentration
         fill(50,50,200);
-        rect(x17,height,gap,-concentrationHeight);
+        rect(x17,height-yBorder,gap,-concentrationHeight);
         //random color for mellow
         fill(250,120,10);
-        rect(x18,height,gap,-mellowHeight);
+        rect(x18,height-yBorder,gap,-mellowHeight);
     }
 }

@@ -16,10 +16,10 @@ public class Menu{
 
     //passing processing applet so we can use proccesing methods
     public void render(Menu intf) {
-        papplet.background(255,100,100);
+        papplet.background(0);
         //video background perhaps?
             //gray rectangle
-            papplet.fill(120,120,120);
+            papplet.fill(255,0,0);
             papplet.rectMode(papplet.CENTER);
             papplet.rect(280,180,350,90);
             papplet.rect(280,280,350,90);
@@ -29,7 +29,7 @@ public class Menu{
             papplet.ellipse(105+350,420,5,5);
 
             papplet.textSize(45);
-            papplet.fill(255,0,0);
+            papplet.fill(255);
             papplet.text("Test Headset",130,200);
             papplet.text("Mind Cube", 130, 300);
             papplet.text("Arduino Robot", 130, 400);

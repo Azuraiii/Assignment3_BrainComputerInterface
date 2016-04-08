@@ -20,14 +20,23 @@ public class arduinoRobot{
         this.papplet = p;
     }
 
-    void update(float concentration_raw,float acc_raw){
+    void updateRobot(float concentration_raw,float acc_raw){
         //-500 left accel
         //500 right accel
 
         float concentration = concentration_raw;
         float accel = acc_raw;
+    }
 
+    void renderScreen(float concentration_raw, float acc_raw){
+        papplet.background(0);
+        papplet.text("Left",500,papplet.height/2);
 
+        papplet.text("Right",30,papplet.height/2);
+
+        papplet.text("Move Forward",papplet.width/4,papplet.height/6);
+
+        papplet.text("Move Backward",papplet.width/4,550);
     }
 
 

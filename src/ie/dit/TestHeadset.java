@@ -32,6 +32,7 @@ public class TestHeadset{
         this.jaw_clench = jaw_clench;
     }
 
+
     void render(float horse1,float horse2,float horse3,float horse4, int forehead,int blink ,int jaw_clench){
         papplet.background(255);
 

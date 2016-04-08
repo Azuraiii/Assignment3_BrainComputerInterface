@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="more changes&#10;working on the arduino robot aswell&#10;">
+    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="cube works perfectly. just add some good jobs, focus more, etc..&#10;arduino works aswell. just need to calibrate more&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MuseProject.iml" afterPath="$PROJECT_DIR$/MuseProject.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Cube.java" afterPath="$PROJECT_DIR$/src/ie/dit/Cube.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Main.java" afterPath="$PROJECT_DIR$/src/ie/dit/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/Menu.java" afterPath="$PROJECT_DIR$/src/ie/dit/Menu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/TestHeadset.java" afterPath="$PROJECT_DIR$/src/ie/dit/TestHeadset.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/arduinoRobot.java" afterPath="$PROJECT_DIR$/src/ie/dit/arduinoRobot.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ie/dit/graphWindow.java" afterPath="$PROJECT_DIR$/src/ie/dit/graphWindow.java" />
     </list>
     <ignored path="MuseProject.iws" />
@@ -26,14 +30,14 @@
     <favorites_list name="MuseProject" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47071743">
+    <splitter split-orientation="horizontal" split-proportion="0.442899">
       <split-first>
         <leaf>
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.3256881">
-                  <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.5057208">
+                  <caret line="136" column="63" selection-start-line="136" selection-start-column="63" selection-end-line="136" selection-end-column="63" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -45,11 +49,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="arduinoRobot.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="arduinoRobot.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/arduinoRobot.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.5720824">
+                  <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -59,17 +63,17 @@
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+                  <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Cube.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Cube.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Cube.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.233945">
-                  <caret line="144" column="28" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
                   <folding>
                     <element signature="docComment;class#Cube#0" expanded="false" />
                   </folding>
@@ -81,7 +85,7 @@
             <entry file="file://$PROJECT_DIR$/src/ie/dit/TestHeadset.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+                  <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -91,12 +95,12 @@
             <entry file="file://$PROJECT_DIR$/src/ie/dit/graphWindow.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="196" column="43" selection-start-line="196" selection-start-column="43" selection-end-line="196" selection-end-column="43" />
+                  <caret line="144" column="25" selection-start-line="144" selection-start-column="25" selection-end-line="144" selection-end-column="25" />
                   <folding>
-                    <element signature="e#1241#1242#0" expanded="true" />
-                    <element signature="e#1270#1271#0" expanded="true" />
-                    <element signature="e#1296#1297#0" expanded="true" />
-                    <element signature="e#1327#1328#0" expanded="true" />
+                    <element signature="e#1244#1245#0" expanded="true" />
+                    <element signature="e#1274#1275#0" expanded="true" />
+                    <element signature="e#1300#1301#0" expanded="true" />
+                    <element signature="e#1331#1332#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -132,12 +136,12 @@
         <option value="$PROJECT_DIR$/src/ie/dit/Ball.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/DataStream.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/Gesture.java" />
-        <option value="$PROJECT_DIR$/src/ie/dit/Menu.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/TestHeadset.java" />
-        <option value="$PROJECT_DIR$/src/ie/dit/arduinoRobot.java" />
-        <option value="$PROJECT_DIR$/src/ie/dit/Main.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/graphWindow.java" />
         <option value="$PROJECT_DIR$/src/ie/dit/Cube.java" />
+        <option value="$PROJECT_DIR$/src/ie/dit/Menu.java" />
+        <option value="$PROJECT_DIR$/src/ie/dit/arduinoRobot.java" />
+        <option value="$PROJECT_DIR$/src/ie/dit/Main.java" />
       </list>
     </option>
   </component>
@@ -246,7 +250,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/processing-3.0b6-windows64/processing-3.0b6/core/library/jogl-java-src.zip!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Libraries/libraries/video/library/video.jar!/" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
@@ -727,7 +731,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459781473356</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="cube works perfectly. just add some good jobs, focus more, etc..&#10;arduino works aswell. just need to calibrate more&#10;">
+      <created>1459783242735</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1459783242735</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -741,16 +751,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33438486" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649842" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33438486" sideWeight="0.50292826" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681388" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2665615" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29296875" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1647145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -804,7 +814,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="test" />
     <MESSAGE value="test 2. working pushes" />
     <MESSAGE value="test 2. working pushesss" />
     <MESSAGE value="making progress" />
@@ -829,7 +838,8 @@
     <MESSAGE value="color  change still not working. the colorNum variable keeps getting stuck. on 8 and 7..... maybe if statement is not the answer....uggghhh&#10;" />
     <MESSAGE value="changes" />
     <MESSAGE value="more changes&#10;working on the arduino robot aswell&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="more changes&#10;working on the arduino robot aswell&#10;" />
+    <MESSAGE value="cube works perfectly. just add some good jobs, focus more, etc..&#10;arduino works aswell. just need to calibrate more&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="cube works perfectly. just add some good jobs, focus more, etc..&#10;arduino works aswell. just need to calibrate more&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -901,59 +911,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/arduinoRobot.java">
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/graphWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
+          <caret line="144" column="25" selection-start-line="144" selection-start-column="25" selection-end-line="144" selection-end-column="25" />
+          <folding>
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#1331#1332#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/TestHeadset.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3256881">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ie/dit/graphWindow.java">
+    <entry file="file://$USER_HOME$/Downloads/PrimLists.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="196" column="43" selection-start-line="196" selection-start-column="43" selection-end-line="196" selection-end-column="43" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1296#1297#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
+            <element signature="e#0#4746#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/Cube.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.233945">
-          <caret line="144" column="28" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
           <folding>
             <element signature="docComment;class#Cube#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/arduinoRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5720824">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5057208">
+          <caret line="136" column="63" selection-start-line="136" selection-start-column="63" selection-end-line="136" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -987,7 +1007,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>core1</last-edited>
+          <last-edited>video</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

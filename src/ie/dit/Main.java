@@ -3,9 +3,11 @@ package ie.dit;
 import oscP5.OscMessage;
 import oscP5.OscP5;
 import processing.core.PApplet;
+
 //Connecting to muse headband
 //go to cmd
 //type: muse-io --device Muse --60hz --osc osc.udp://localhost:5000
+//
 /**
  * Created by azkei on 22/03/2016.
  */
@@ -67,6 +69,7 @@ public class Main extends PApplet {
         cube = new Cube(this, alpha_raw1,beta_raw1,delta_raw1,concentration_raw,mellow_raw);
         papplet = new PApplet();
         gw = new graphWindow();
+
 
         ar = new arduinoRobot(this);
 
@@ -130,8 +133,8 @@ public class Main extends PApplet {
                     break;
                 case 3:
                     //arduino robot here
-                    ar.update(concentration_raw,acc_raw);
-
+                    ar.updateRobot(concentration_raw,acc_raw);
+                    ar.renderScreen(concentration_raw,acc_raw);
                     break;
                 case 4:
                     //exit
