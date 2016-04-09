@@ -143,11 +143,7 @@ public class Main extends PApplet {
                     break;
                 case 3:
                     //arduino robot here
-                    ar.updateRobot(concentration_raw,acc_raw);
-                    ar.arrowRight(concentration_raw,acc_raw);
-                    ar.arrowLeft();
-                    ar.arrowTop();
-                    ar.arrowBot();
+                    ar.updateRobot(concentration_raw,acc_raw,mellow_raw);
                     break;
                 case 4:
                     //exit
