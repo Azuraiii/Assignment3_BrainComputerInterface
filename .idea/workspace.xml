@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="more comments to pass the time.">
+    <list default="true" id="2479f13f-f6b7-4685-8e6c-66837bd92c4d" name="Default" comment="arduino code added, not full yet">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MuseProject.iws" />
@@ -26,14 +26,24 @@
     <splitter split-orientation="horizontal" split-proportion="0.4022787">
       <split-first>
         <leaf>
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4191344">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="243" column="5" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sketch_apr02a.ino" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sketch_apr02a/sketch_apr02a.ino">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -216,6 +226,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MuseProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="museProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sketch_apr02a" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -753,7 +777,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460141737149</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="arduino code added, not full yet">
+      <created>1460215842561</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1460215842561</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -830,7 +860,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="more errors to handle" />
     <MESSAGE value="success ! data is flowing to cube class." />
     <MESSAGE value="working on gesture class. alpha is giving NaN. not sure why." />
     <MESSAGE value="loaded images successfully" />
@@ -855,7 +884,8 @@
     <MESSAGE value="arrows drawn, just need to align them and change color&#10;" />
     <MESSAGE value="updated readme" />
     <MESSAGE value="more comments to pass the time." />
-    <option name="LAST_COMMIT_MESSAGE" value="more comments to pass the time." />
+    <MESSAGE value="arduino code added, not full yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="arduino code added, not full yet" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1002,11 +1032,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ie/dit/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4191344">
+        <state vertical-scroll-proportion="0.0">
           <caret line="243" column="5" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sketch_apr02a/sketch_apr02a.ino">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
