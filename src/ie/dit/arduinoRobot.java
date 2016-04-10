@@ -15,7 +15,6 @@ public class arduinoRobot{
     PApplet papplet;
     public float concentration_raw;
     public float acc_raw;
-    boolean var = false;
 
     arduinoRobot(PApplet p){
         this.papplet = p;
@@ -29,24 +28,25 @@ public class arduinoRobot{
 
         papplet.background(0);
         papplet.fill(255);
+        //right
         if(accel > 500) {
             papplet.text("Right", 475, papplet.height / 2);
         }
 
+        //left
         if(accel < - 400) {
             papplet.text("Left", 30, papplet.height / 2);
         }
 
+        //forward
         if (concentration > 0.3 && concentration > mellow) {
             papplet.text("Move Forward", papplet.width / 4, papplet.height / 6);
         }
 
+        //going backwards
         if(mellow >0.3 && mellow > concentration) {
             papplet.text("Move Backward", papplet.width / 4, 550);
         }
-        //-500 left accel
-        //500 right accel
-//
     }//end updateRobot
 
 }//end class

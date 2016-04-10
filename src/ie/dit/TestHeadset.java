@@ -10,6 +10,7 @@ public class TestHeadset{
     //forehead
     //blink
     //jaw
+
     PApplet papplet;
     float horse1;
     float horse2;
@@ -33,14 +34,16 @@ public class TestHeadset{
     }
 
 
-    void render(float horse1,float horse2,float horse3,float horse4, int forehead,int blink ,int jaw_clench){
-        papplet.background(255);
 
+    void render(float horse1,float horse2,float horse3,float horse4, int forehead,int blink ,int jaw_clench){
+        papplet.background(0);
+
+        papplet.stroke(255);
         if(jaw_clench == 1) {
             papplet.pushMatrix();
             papplet.beginShape(papplet.POLYGON);
-            papplet.fill(0);
-            papplet.stroke(255);
+            papplet.fill(255);
+
             papplet.strokeWeight(3);
             int[] xpts = {150, 200, 300, 400, 450, 350, 300, 250, 150};
             int[] ypts = {350, 450, 500, 450, 350, 420, 430, 420, 350};
@@ -76,6 +79,7 @@ public class TestHeadset{
         if(forehead ==1) {
             papplet.fill(0);
             papplet.rect(300, 100, 50, 40);
+
         }
         //horse3
         if(horse3 ==1) {

@@ -1,5 +1,4 @@
 package ie.dit;
-
 import oscP5.OscMessage;
 import oscP5.OscP5;
 import processing.core.PApplet;
@@ -12,6 +11,7 @@ import processing.core.PApplet;
  * Created by azkei on 22/03/2016.
  */
 public class Main extends PApplet {
+
 
     PApplet papplet;
     Menu intf;
@@ -82,6 +82,8 @@ public class Main extends PApplet {
         gw = new graphWindow();
         //arduinorobot class
         ar = new arduinoRobot(this);
+
+        textFont(createFont("Arial", 12));
 
         //this code helps pass by reference menu var
         intf = new Menu(this);

@@ -149,6 +149,4 @@ public class Cube {
         papplet.popMatrix();
 
     }//end drawCube
-
-
 }//end class

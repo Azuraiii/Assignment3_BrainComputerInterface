@@ -79,6 +79,7 @@ public class graphWindow extends PApplet{
         background(255);
     }//end setup
 
+    //this function loads the data from main into this window
     public void loadData(graphWindow gw){
         //waves
         this.alpha1 = gw.rawAlpha1;
@@ -110,7 +111,10 @@ public class graphWindow extends PApplet{
     }//end load data
 
     public void draw(){
+
         background(0);
+        fill(255,255,0);
+        //rect(0,0,width,40);
 
         float yBorder = (float) (width*0.05);
         //mapping the waves
@@ -169,12 +173,14 @@ public class graphWindow extends PApplet{
         float x18 =17*gap;
 
         //red for alpha
+
         fill(55,0,0);
         rect(x1,height-yBorder,gap,-alphaHeight1);
         fill(155,0,0);
         rect(x2,height-yBorder,gap,-alphaHeight2);
         fill(255,0,0);
         rect(x3,height-yBorder,gap,-alphaHeight3);
+        text("Alpha Brainwaves",50,height-yBorder+15);
 
         //blue for beta
         fill(0,0,55);
@@ -183,6 +189,7 @@ public class graphWindow extends PApplet{
         rect(x5,height-yBorder,gap,-betaHeight2);
         fill(0,0,255);
         rect(x6,height-yBorder,gap,-betaHeight3);
+        text("Beta Brainwaves",200,height-yBorder+15);
 
         //purple for delta
         fill(160,30,240);
@@ -191,6 +198,7 @@ public class graphWindow extends PApplet{
         rect(x8,height-yBorder,gap,-deltaHeight2);
         fill(160,30,240);
         rect(x9,height-yBorder,gap,-deltaHeight3);
+        text("Delta Brainwaves",350,height-yBorder+15);
 
         //green for theta
         fill(0,55,0);
@@ -199,6 +207,7 @@ public class graphWindow extends PApplet{
         rect(x11,height-yBorder,gap,-thetaHeight2);
         fill(0,255,0);
         rect(x12,height-yBorder,gap,-thetaHeight3);
+        text("Theta Brainwaves",550,height-yBorder+15);
 
         //yellow for gamma
         fill(55,55,0);
@@ -207,16 +216,20 @@ public class graphWindow extends PApplet{
         rect(x14,height-yBorder,gap,-gammaHeight2);
         fill(255,255,0);
         rect(x15,height-yBorder,gap,-gammaHeight3);
+        text("Gamma Brainwaves",700,height-yBorder+15);
 
         //random color for eeg
         fill(120,120,120);
         rect(x16,height-yBorder,gap,-eegHeight);
+        text("EEG",850,height-yBorder+15);
 
         //random color for concentration
         fill(50,50,200);
         rect(x17,height-yBorder,gap,-concentrationHeight);
+        text("Concentrate",880,height-yBorder+15);
         //random color for mellow
         fill(250,120,10);
         rect(x18,height-yBorder,gap,-mellowHeight);
+        text("Relax",960,height-yBorder+15);
     }//end draw
 }//end class

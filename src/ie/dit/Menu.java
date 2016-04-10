@@ -16,8 +16,11 @@ public class Menu{
 
     //passing processing applet so we can use proccesing methods
     public void render(Menu intf) {
+
         papplet.background(0);
-        //video background perhaps?
+        papplet.stroke(255,0,0);
+        papplet.textSize(50);
+        papplet.text("Mind Control Program",papplet.width/7, 70);
             //gray rectangle
             papplet.fill(255,0,0);
             papplet.rectMode(papplet.CENTER);
