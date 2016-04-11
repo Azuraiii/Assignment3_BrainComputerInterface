@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jssc">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/processing-3.0b6-windows64/processing-3.0b6/modes/java/libraries/serial/library/jssc.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/processing-3.0b6-windows64/processing-3.0b6/modes/java/libraries/serial/library/serial.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/processing-3.0b6-windows64/processing-3.0b6/modes/java/libraries/serial/library/jssc.jar!/" />
+    </SOURCES>
+  </library>
+</component>

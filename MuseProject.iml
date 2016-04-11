@@ -17,5 +17,6 @@
     <orderEntry type="library" name="video" level="application" />
     <orderEntry type="library" name="minim" level="application" />
     <orderEntry type="library" name="minim2" level="application" />
+    <orderEntry type="library" name="jssc" level="project" />
   </component>
 </module>

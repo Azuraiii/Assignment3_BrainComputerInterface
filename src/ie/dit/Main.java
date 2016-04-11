@@ -1,7 +1,9 @@
 package ie.dit;
+
 import oscP5.OscMessage;
 import oscP5.OscP5;
 import processing.core.PApplet;
+import processing.serial.Serial;
 
 //Connecting to muse headband
 //go to cmd
@@ -13,6 +15,7 @@ import processing.core.PApplet;
 public class Main extends PApplet {
 
 
+    Serial myPort;
     PApplet papplet;
     Menu intf;
     OscP5 oscP5;
@@ -51,6 +54,7 @@ public class Main extends PApplet {
     public float concentration_raw;
     public float mellow_raw;
     //accelerometer
+    public float ard_acc;
     public float acc_raw;
     //electroencephalogram(EEG)
     public float eeg_raw;
@@ -68,8 +72,20 @@ public class Main extends PApplet {
     //Port for bluetooth
     static int recvPort = 5000;
 
+
+    //arduino
+    float cVar = 0;
+    float checkA = 800;
+    float checkC = 1;
+    String passVar ="";
+    String passVar1="";
+    float checkcVar =0;
+
     public void setup(){
         //setup stuff
+        //arduino stuff
+        String portName = Serial.list()[2];
+        myPort = new Serial(this,portName,9600);
         //osc for bluetooth event handling
         oscP5 = new OscP5(this, recvPort);
         //testheadset class
@@ -129,7 +145,6 @@ public class Main extends PApplet {
             switch (intf.menu) {
                 case 0:
                     //menu screen pass by reference
-
                     intf.render(intf);
                     break;
                 case 1:
@@ -166,7 +181,29 @@ public class Main extends PApplet {
         //accelerometer
         if(msg.checkAddrPattern("/muse/acc")==true){
             acc_raw = msg.get(2).floatValue();
-            //System.out.println("acc_raw: "+acc_raw);
+            ard_acc = msg.get(2).floatValue();
+
+        }
+        if(cVar > 0.3) {
+            myPort.clear();
+                ard_acc = msg.get(2).floatValue();
+                //System.out.println("acc_raw: "+acc_raw);
+                if ((ard_acc < -100 && (checkA > -150 && checkA < 150) || (ard_acc < -150 && checkA > 150) || ((ard_acc > -150 && ard_acc < 150) && checkA < -150) || (ard_acc > -150 && ard_acc < 150) && checkA > 150) || (ard_acc > 150 && (ard_acc < 150 && checkA > -150)) || (ard_acc > 150 && checkA < -150)) {
+                    passVar = "3A" + ard_acc + ",";
+                    pass(myPort, passVar);
+                    checkA = ard_acc;
+                    checkcVar = cVar;
+                }
+
+        }
+        else if (cVar < 0.3 && checkcVar > 0.3) {
+            passVar = "3A" + 0 + ",";
+            //headSet.pass(myPort, passVar);
+            myPort.write("1L" + 0 + ",");
+            myPort.write("1R" + 0 + ",");
+            checkcVar = cVar;
+            System.out.println("checkAblabla");
+            checkA = 500;
         }
         //eeg
         if(msg.checkAddrPattern("/muse/eeg")==true){
@@ -212,6 +249,8 @@ public class Main extends PApplet {
         //experimentals
         if(msg.checkAddrPattern("/muse/elements/experimental/concentration")==true){
             concentration_raw = msg.get(0).floatValue();
+            //arduino
+            cVar = msg.get(0).floatValue();
              //System.out.println("concentration raw: "+concentration_raw);
         }
         if(msg.checkAddrPattern("/muse/elements/experimental/mellow")==true){
@@ -241,6 +280,9 @@ public class Main extends PApplet {
         }
     }
 
+    public void pass(Serial myPort, String var){
+        myPort.write(var);
+    }
     public static void main(String[] args)
     {
         String[] a = {"MAIN"};
