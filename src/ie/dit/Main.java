@@ -74,13 +74,7 @@ public class Main extends PApplet {
     static int recvPort = 5000;
 
 
-    //arduino
-    float cVar;
-    float checkA = 800;
-    float checkC = 1;
-    String passVar ="";
-    String passVar1="";
-    float checkcVar =0;
+
 
     public void setup(){
         //setup stuff
@@ -113,8 +107,6 @@ public class Main extends PApplet {
     }//end settings
 
     public void draw(){
-
-        cVar = concentration_raw;
         ard_acc = acc_raw;
 
         //this is for the real time bar graph window
@@ -166,6 +158,7 @@ public class Main extends PApplet {
                 case 3:
                     //arduino robot here
                     ar.updateRobot(concentration_raw,acc_raw,mellow_raw);
+                    moveRobot(acc_raw);
                     break;
                 case 4:
                     //exit
@@ -189,26 +182,7 @@ public class Main extends PApplet {
             acc_raw = msg.get(2).floatValue();
 
         }
-//        if(cVar > 0.3) {
-//            myPort.clear();
-//                ard_acc = msg.get(2).floatValue();
-//                //System.out.println("acc_raw: "+acc_raw);
-//                if ((ard_acc < -100 && (checkA > -150 && checkA < 150) || (ard_acc < -150 && checkA > 150) || ((ard_acc > -150 && ard_acc < 150) && checkA < -150) || (ard_acc > -150 && ard_acc < 150) && checkA > 150) || (ard_acc > 150 && (ard_acc < 150 && checkA > -150)) || (ard_acc > 150 && checkA < -150)) {
-//                    passVar = "3A" + ard_acc + ",";
-//                    pass(myPort, passVar);
-//                    checkA = ard_acc;
-//                    checkcVar = cVar;
-//                }
-//        }
-//        else if (cVar < 0.3 && checkcVar > 0.3) {
-//            passVar = "3A" + 0 + ",";
-//            //headSet.pass(myPort, passVar);
-//            myPort.write("1L" + 0 + ",");
-//            myPort.write("1R" + 0 + ",");
-//            checkcVar = cVar;
-//            System.out.println("checkAblabla");
-//            checkA = 500;
-//        }
+
         //eeg
         if(msg.checkAddrPattern("/muse/eeg")==true){
             eeg_raw = msg.get(0).floatValue();
@@ -282,6 +256,36 @@ public class Main extends PApplet {
         }
         if(msg.checkAddrPattern("/muse/elements/jaw_clench")==true){
             jaw_clench = msg.get(0).intValue();
+        }
+    }
+
+    void moveRobot(float acc_raw){
+        //arduino
+        float cVar = concentration_raw;
+        float checkA = 800;
+        float checkC = 1;
+        String passVar ="";
+        String passVar1="";
+        float checkcVar =0;
+
+        if(cVar > 0.3) {
+            myPort.clear();
+            ard_acc = acc_raw;
+            //System.out.println("acc_raw: "+acc_raw);
+            if ((ard_acc < -100 && (checkA > -150 && checkA < 150) || (ard_acc < -150 && checkA > 150) || ((ard_acc > -150 && ard_acc < 150) && checkA < -150) || (ard_acc > -150 && ard_acc < 150) && checkA > 150) || (ard_acc > 150 && (ard_acc < 150 && checkA > -150)) || (ard_acc > 150 && checkA < -150)) {
+                passVar = "3A" + ard_acc + ",";
+                pass(myPort, passVar);
+                checkA = ard_acc;
+                checkcVar = cVar;
+            }
+        }
+        else if (cVar < 0.3 && checkcVar > 0.3) {
+            passVar = "3A" + 0 + ",";
+            //headSet.pass(myPort, passVar);
+            myPort.write("1L" + 0 + ",");
+            myPort.write("1R" + 0 + ",");
+            checkcVar = cVar;
+            checkA = 500;
         }
     }
 
