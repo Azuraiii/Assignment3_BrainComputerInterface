@@ -7,6 +7,9 @@ and also make it disappear by relaxing their mind.
 For the physical manipulation, with this software a user can make an arduino robot move forward with concentration and backwards with relaxation.
 The steering control of the arduino is manipulated by an accelerometer built into the headset.
 
+<iframe src="https://player.vimeo.com/video/163200884" width="640" height="427" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/163200884">Introduction</a> from <a href="https://vimeo.com/user51233478">Jelo Salomon</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
 https://vimeo.com/163200884
 
 #Understanding Brainwaves:
