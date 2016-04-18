@@ -7,6 +7,8 @@ and also make it disappear by relaxing their mind.
 For the physical manipulation, with this software a user can make an arduino robot move forward with concentration and backwards with relaxation.
 The steering control of the arduino is manipulated by an accelerometer built into the headset.
 
+https://vimeo.com/163200884
+
 #Understanding Brainwaves:
 To get a better understanding of the brain output I needed to do some research about brainwaves.
 Taken from: http://www.brainworksneurotherapy.com/what-are-brainwaves
