@@ -55,6 +55,8 @@ An empty rectangle appears and if the headset is properly connected to the users
 An poorly designed eye and smile will appear when a user blinks and clenches their jaw.
 
 ##Mind Cube
+<iframe src="https://player.vimeo.com/video/163201354" width="640" height="427" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/163201354">Cube</a> from <a href="https://vimeo.com/user51233478">Jelo Salomon</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 The cube rotates and moves closer to the screen when the user is concentrating their mind and disappears when the user is relaxing their mind.
 
 ##Arduino Robot
