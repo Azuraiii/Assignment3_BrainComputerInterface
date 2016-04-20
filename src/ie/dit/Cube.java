@@ -34,50 +34,50 @@ public class Cube {
         this.mellow_raw = mellow_raw;
     }
 
-    public void getMax(float alpha_raw, float beta_raw, float delta_raw, float theta_raw, float gamma_raw) {
-
-        //mapping the waves
-        float alpha = papplet.map(alpha_raw, 0, 1, 0, 100);
-        float beta  = papplet.map(beta_raw, 0, 1, 0, 100);
-        float delta = papplet.map(delta_raw, 0, 1, 0, 100);
-        float theta = papplet.map(theta_raw, 0, 1, 0, 100);
-        float gamma = papplet.map(gamma_raw, 0, 1, 0, 100);
-
-        float[] array = new float[]{alpha, beta, gamma, delta, theta, gamma};
-        int max = 0;
-        int maxIndex = -1;
-
-        for (int i = 0; i < array.length; i++)
-        {
-            if (array[i] > max) {
-               // max = (int) array[i];
-                maxIndex = i;
-            }
-        }
-        //System.out.println("delta " + delta_raw);
-
-        if (maxIndex == 0) {
-            //alpha
-             colorNum = 1;
-        }
-        if (maxIndex == 1) {
-            //beta
-             colorNum = 2;
-        }
-        if (maxIndex == 2) {
-            //delta
-             colorNum = 3;
-        }
-        if (maxIndex == 3) {
-            //theta
-             colorNum = 4;
-        }
-        if (maxIndex == 4) {
-            //gamma
-             colorNum = 5;
-        }
-
-    }
+//    public void getMax(float alpha_raw, float beta_raw, float delta_raw, float theta_raw, float gamma_raw) {
+//
+//        //mapping the waves
+//        float alpha = papplet.map(alpha_raw, 0, 1, 0, 100);
+//        float beta  = papplet.map(beta_raw, 0, 1, 0, 100);
+//        float delta = papplet.map(delta_raw, 0, 1, 0, 100);
+//        float theta = papplet.map(theta_raw, 0, 1, 0, 100);
+//        float gamma = papplet.map(gamma_raw, 0, 1, 0, 100);
+//
+//        float[] array = new float[]{alpha, beta, gamma, delta, theta, gamma};
+//        int max = 0;
+//        int maxIndex = -1;
+//
+//        for (int i = 0; i < array.length; i++)
+//        {
+//            if (array[i] > max) {
+//               // max = (int) array[i];
+//                maxIndex = i;
+//            }
+//        }
+//        //System.out.println("delta " + delta_raw);
+//
+//        if (maxIndex == 0) {
+//            //alpha
+//             colorNum = 1;
+//        }
+//        if (maxIndex == 1) {
+//            //beta
+//             colorNum = 2;
+//        }
+//        if (maxIndex == 2) {
+//            //delta
+//             colorNum = 3;
+//        }
+//        if (maxIndex == 3) {
+//            //theta
+//             colorNum = 4;
+//        }
+//        if (maxIndex == 4) {
+//            //gamma
+//             colorNum = 5;
+//        }
+//
+//    }
 
 
     void drawCube(float concentration_raw, float mellow_raw) {
@@ -85,7 +85,9 @@ public class Cube {
         papplet.camera();
         papplet.lights();
 
-        System.out.println("colorNum: " + colorNum);
+
+
+//        System.out.println("colorNum: " + colorNum);
 
         //mapping the concentration values
         float concentration = concentration_raw;
@@ -95,6 +97,18 @@ public class Cube {
         //mapping the relaxation values
         float mellow = mellow_raw;
         float mellowRGB = papplet.map(mellow, 0, 1, 255, 0);
+
+        //mapping the relaxation values
+        float alpha = alpha_raw;
+        float alphaRGB = papplet.map(alpha, 0, 1, 255, 0);
+
+        //mapping the relaxation values
+        float beta = beta_raw;
+        float betaRGB = papplet.map(beta, 0, 1, 255, 0);
+
+        //mapping the relaxation values
+        float delta = delta_raw;
+        float deltaRGB = papplet.map(delta, 0, 1, 255, 0);
         //System.out.println("concentrationRGB: "+concentrationRGB);
 
         //if user is concentrating, make cube speed faster
@@ -108,37 +122,23 @@ public class Cube {
             zSpeed = (float) 0.001;
         }
 
+
+
         //add rotation speed
         xAngle += xSpeed;
         yAngle += ySpeed;
         zAngle += zSpeed;
 
         papplet.background(0);
-        //makes the cube fade out as the more you mellow out.
 
-        //change color of the cube depending on the max height of  waves
-        if(colorNum == 0){
-            //alpha red
-            papplet.fill(255, 0, 0, mellowRGB);
-        }
-        if(colorNum == 1){
-            //beta blue
-            papplet.fill(0, 0, 255, mellowRGB);
-        }
-        if(colorNum == 2){
-            //delta purple
-            papplet.fill(160, 30, 240, mellowRGB);
-        }
-        if(colorNum == 3){
-            //theta green
-            papplet.fill(0, 255, 0, mellowRGB);
-        }
-        if(colorNum == 4){
-            //gamma yellow
-            papplet.fill(255, 255, 0, mellowRGB);
-        }
+        //makes the cube fade out as the more you mellow out.
+        //change the color of the cube
+        papplet.fill(alphaRGB, betaRGB, deltaRGB, mellowRGB);
 
         papplet.pushMatrix();
+        papplet.textSize(15);
+        papplet.text("Concentrate to move the cube, Relax to make it disappear",papplet.width/5,100);
+
         //brings the cube closer as you concentrate
         papplet.translate(300, 300, 100 + concentrationRGB);
         papplet.rotateX(xAngle);

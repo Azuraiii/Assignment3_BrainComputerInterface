@@ -22,7 +22,7 @@ public class Main extends PApplet {
     Cube cube;
     TestHeadset testHeadset;
     graphWindow gw;
-    arduinoRobot ar;
+    arduinoRobot headSet;
 
     //public variables where data flows
     //brainwaves
@@ -73,14 +73,29 @@ public class Main extends PApplet {
     //Port for bluetooth
     static int recvPort = 5000;
 
+    float cVar = 0; // Concetration data
+    float aVar = 0; // Accelometer data
+    float checkA = 800;
+    float checkC = 1;
+    String passVar = "";
+    String passVar1 = "";
 
+    float checkcVar = 0;
+
+//    float checkA = 800;
+//    float checkC = 1;
+//    String passVar ="";
+//    String passVar1="";
+//    float checkcVar =0;
 
 
     public void setup(){
+
+        printArray(Serial.list());
         //setup stuff
         //arduino stuff
         String portName = Serial.list()[2];
-      //  myPort = new Serial(this,portName,9600);
+        myPort = new Serial(this,portName,9600);
         //osc for bluetooth event handling
         oscP5 = new OscP5(this, recvPort);
         //testheadset class
@@ -92,7 +107,7 @@ public class Main extends PApplet {
         //graphwindow class
         gw = new graphWindow();
         //arduinorobot class
-        ar = new arduinoRobot(this);
+        headSet = new arduinoRobot(this);
 
         textFont(createFont("Arial", 12));
 
@@ -107,7 +122,9 @@ public class Main extends PApplet {
     }//end settings
 
     public void draw(){
-        ard_acc = acc_raw;
+
+//        cVar = concentration_raw;
+
 
         //this is for the real time bar graph window
         //waves
@@ -138,7 +155,7 @@ public class Main extends PApplet {
         //this function passes the waves into the new window in real time
         gw.loadData(gw);
 
-        //System.out.println(ard_acc);
+        //System.out.println(concentration_raw);
             switch (intf.menu) {
                 case 0:
                     //menu screen pass by reference
@@ -151,14 +168,41 @@ public class Main extends PApplet {
                     break;
                 case 2:
                     //mind cube here
-                    cube.getMax(alpha_raw2,beta_raw2,delta_raw2,theta_raw2,gamma_raw2);
+                    //cube.getMax(alpha_raw2,beta_raw2,delta_raw2,theta_raw2,gamma_raw2);
                     cube.drawCube(concentration_raw,mellow_raw);
 
                     break;
                 case 3:
                     //arduino robot here
-                    ar.updateRobot(concentration_raw,acc_raw,mellow_raw);
-                    moveRobot(acc_raw);
+                    headSet.updateRobot(concentration_raw,aVar,mellow_raw);
+                    //moveRobot(acc_raw,concentration_raw);
+                    if (concentration_raw > 0.3) {
+                        //myPort.clear();
+
+                        if ((aVar < -100 && (checkA > -150 && checkA < 150) || (aVar < -150 && checkA > 150) || ((aVar > -150 && aVar < 150) && checkA < -150) || (aVar > -150 && aVar < 150) && checkA > 150) || (aVar > 150 && (checkA < 150 && checkA > -150)) || (aVar > 150 && checkA < -150)) {
+                            passVar = "3A" + aVar + ",";
+
+                           // headSet.pass(myPort, passVar);
+
+                            checkA = aVar;
+                            checkcVar = concentration_raw;
+
+                            System.out.println("checkA: " + checkA);
+                            System.out.println("aVar: " + aVar);
+                        }/*else
+                    {
+                        passVar = "3A" + 100 + ",";
+                        headSet.pass(myPort, passVar);
+                    }*/
+                    } else if (concentration_raw < 0.3 && checkcVar > 0.3) {
+                        passVar = "3A" + 0 + ",";
+                        //headSet.pass(myPort, passVar);
+                        //myPort.write("1L" + 0 + ",");
+                        //myPort.write("1R" + 0 + ",");
+                        checkcVar = concentration_raw;
+                        System.out.println("checkAblabla");
+                        checkA = 500;
+                    }
                     break;
                 case 4:
                     //exit
@@ -175,49 +219,48 @@ public class Main extends PApplet {
     }//end keyPressed
 
     //this method brings in real time bluetooth data from the Muse headband.
-    void oscEvent(OscMessage msg){
+    void oscEvent(OscMessage msg) {
 
         //accelerometer
-        if(msg.checkAddrPattern("/muse/acc")==true){
-            acc_raw = msg.get(2).floatValue();
-
+        if (msg.checkAddrPattern("/muse/acc") == true) {
+            aVar = msg.get(2).floatValue();
         }
 
         //eeg
-        if(msg.checkAddrPattern("/muse/eeg")==true){
+        if (msg.checkAddrPattern("/muse/eeg") == true) {
             eeg_raw = msg.get(0).floatValue();
             //System.out.println("eeg_raw: "+eeg_raw);
         }
         //waves
-        if(msg.checkAddrPattern("/muse/elements/alpha_relative")==true){
+        if (msg.checkAddrPattern("/muse/elements/alpha_relative") == true) {
             alpha_raw1 = msg.get(0).floatValue();
             //default
             alpha_raw2 = msg.get(1).floatValue();
             alpha_raw3 = msg.get(2).floatValue();
-             // System.out.println("alpha_Raw: "+alpha_raw);
+            // System.out.println("alpha_Raw: "+alpha_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/beta_relative")==true){
+        if (msg.checkAddrPattern("/muse/elements/beta_relative") == true) {
             beta_raw1 = msg.get(0).floatValue();
             //default
             beta_raw2 = msg.get(1).floatValue();
             beta_raw3 = msg.get(2).floatValue();
-              //System.out.println("beta_Raw: "+beta_raw);
+            //System.out.println("beta_Raw: "+beta_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/gamma_relative")==true){
+        if (msg.checkAddrPattern("/muse/elements/gamma_relative") == true) {
             gamma_raw1 = msg.get(0).floatValue();
             //default
             gamma_raw2 = msg.get(1).floatValue();
             gamma_raw3 = msg.get(3).floatValue();
-           // System.out.println("gamma_Raw: "+gamma_raw);
+            // System.out.println("gamma_Raw: "+gamma_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/theta_relative")==true){
+        if (msg.checkAddrPattern("/muse/elements/theta_relative") == true) {
             theta_raw1 = msg.get(0).floatValue();
             //default
             theta_raw2 = msg.get(1).floatValue();
             theta_raw3 = msg.get(2).floatValue();
-           // System.out.println("theta_Raw: "+theta_raw);
+            // System.out.println("theta_Raw: "+theta_raw);
         }
-        if(msg.checkAddrPattern("/muse/elements/delta_relative")==true){
+        if (msg.checkAddrPattern("/muse/elements/delta_relative") == true) {
             delta_raw1 = msg.get(0).floatValue();
             //default
             delta_raw2 = msg.get(1).floatValue();
@@ -225,19 +268,18 @@ public class Main extends PApplet {
             //System.out.println("delta_raw: "+delta_raw);
         }
         //experimentals
-        if(msg.checkAddrPattern("/muse/elements/experimental/concentration")==true){
+        if (msg.checkAddrPattern("/muse/elements/experimental/concentration") == true) {
             concentration_raw = msg.get(0).floatValue();
             //arduino
-
             //System.out.println("concentration raw: "+concentration_raw);
         }
 
-        if(msg.checkAddrPattern("/muse/elements/experimental/mellow")==true){
+        if (msg.checkAddrPattern("/muse/elements/experimental/mellow") == true) {
             mellow_raw = msg.get(0).floatValue();
-           // System.out.println("mellow_raw:" +mellow_raw);
+            // System.out.println("mellow_raw:" +mellow_raw);
         }
         //horseshoe test
-        if(msg.checkAddrPattern("/muse/elements/horseshoe")==true){
+        if (msg.checkAddrPattern("/muse/elements/horseshoe") == true) {
             horse1 = msg.get(0).floatValue();
             horse2 = msg.get(1).floatValue();
             horse3 = msg.get(2).floatValue();
@@ -247,51 +289,20 @@ public class Main extends PApplet {
 //            System.out.println("horse3: "+horse3);
 //            System.out.println("horse4: "+horse4);
         }
-        if(msg.checkAddrPattern("/muse/elements/touching_forehead")==true){
+        if (msg.checkAddrPattern("/muse/elements/touching_forehead") == true) {
             forehead = msg.get(0).intValue();
             //System.out.println("forehead: "+forehead);
         }
-        if(msg.checkAddrPattern("/muse/elements/blink")==true){
+        if (msg.checkAddrPattern("/muse/elements/blink") == true) {
             blink = msg.get(0).intValue();
         }
-        if(msg.checkAddrPattern("/muse/elements/jaw_clench")==true){
+        if (msg.checkAddrPattern("/muse/elements/jaw_clench") == true) {
             jaw_clench = msg.get(0).intValue();
         }
+
     }
 
-    void moveRobot(float acc_raw){
-        //arduino
-        float cVar = concentration_raw;
-        float checkA = 800;
-        float checkC = 1;
-        String passVar ="";
-        String passVar1="";
-        float checkcVar =0;
 
-        if(cVar > 0.3) {
-            myPort.clear();
-            ard_acc = acc_raw;
-            //System.out.println("acc_raw: "+acc_raw);
-            if ((ard_acc < -100 && (checkA > -150 && checkA < 150) || (ard_acc < -150 && checkA > 150) || ((ard_acc > -150 && ard_acc < 150) && checkA < -150) || (ard_acc > -150 && ard_acc < 150) && checkA > 150) || (ard_acc > 150 && (ard_acc < 150 && checkA > -150)) || (ard_acc > 150 && checkA < -150)) {
-                passVar = "3A" + ard_acc + ",";
-                pass(myPort, passVar);
-                checkA = ard_acc;
-                checkcVar = cVar;
-            }
-        }
-        else if (cVar < 0.3 && checkcVar > 0.3) {
-            passVar = "3A" + 0 + ",";
-            //headSet.pass(myPort, passVar);
-            myPort.write("1L" + 0 + ",");
-            myPort.write("1R" + 0 + ",");
-            checkcVar = cVar;
-            checkA = 500;
-        }
-    }
-
-    public void pass(Serial myPort, String var){
-        myPort.write(var);
-    }
     public static void main(String[] args)
     {
         String[] a = {"MAIN"};
