@@ -7,6 +7,11 @@ and also make it disappear by relaxing their mind.
 For the physical manipulation, with this software a user can make an arduino robot move forward with concentration and backwards with relaxation.
 The steering control of the arduino is manipulated by an accelerometer built into the headset.
 
+<iframe src="https://player.vimeo.com/video/163200884" width="640" height="427" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/163200884">Introduction</a> from <a href="https://vimeo.com/user51233478">Jelo Salomon</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+https://vimeo.com/163200884
+
 #Understanding Brainwaves:
 To get a better understanding of the brain output I needed to do some research about brainwaves.
 Taken from: http://www.brainworksneurotherapy.com/what-are-brainwaves
@@ -50,9 +55,13 @@ An empty rectangle appears and if the headset is properly connected to the users
 An poorly designed eye and smile will appear when a user blinks and clenches their jaw.
 
 ##Mind Cube
+<iframe src="https://player.vimeo.com/video/163201354" width="640" height="427" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/163201354">Cube</a> from <a href="https://vimeo.com/user51233478">Jelo Salomon</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 The cube rotates and moves closer to the screen when the user is concentrating their mind and disappears when the user is relaxing their mind.
 
 ##Arduino Robot
+<iframe src="https://player.vimeo.com/video/163201622" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/163201622">arduinotest</a> from <a href="https://vimeo.com/user51233478">Jelo Salomon</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 When the user uses the headset..data from the headset is sent to the computer and towards the arduino robot via bluetooth.
 When the user concentrates it will cause the robot to move forward.
 When the user relaxes their thoughts it will cause the robot to move backwards.
